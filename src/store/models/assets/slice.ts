@@ -12,6 +12,8 @@ import request from "../../../utils/request"
 // Model
 import assetInitialData from "./data"
 
+type State = typeof assetInitialData
+
 const useAssetSlice = create(subscribeWithSelector((set, get) => ({
 	// -------------------------------------------------
 	// State
@@ -24,10 +26,10 @@ const useAssetSlice = create(subscribeWithSelector((set, get) => ({
 	// -------------------------------------------------
 
 	fetch: async () => {
-		const { limit, page, order, sort } = get().list
+		const { limit, page, order, sort } = (get() as State).list
 		const { data } = await request("atomicassets/v1/assets", { params: { limit, page, order, sort } })
 
-		set(state => ({ 
+		set((state: State) => ({ 
 			list: {
 				...state.list,
 				data: data.data,
@@ -35,7 +37,7 @@ const useAssetSlice = create(subscribeWithSelector((set, get) => ({
 		}))
 	},
 	paginate: (props: Omit<PaginationType, "data">) => {
-		set(state => ({
+		set((state: State) => ({
 			list: {
 				...state.list,
 				...props
