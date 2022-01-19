@@ -21,23 +21,6 @@ jobs:
       - name: Download packages
         run: yarn
 
-  audit:
-    name: Audit for vulnerabilities
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'yarn'
-      
-      - name: Audit packages
-        run: yarn audit
-
   lint:
     name: Lint code for standarlization
     needs: setup
