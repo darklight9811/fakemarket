@@ -1,7 +1,7 @@
 name: 'Main'
 
 on:
-  commit: 
+  push: 
     branches: [ main ]
 
 jobs:
