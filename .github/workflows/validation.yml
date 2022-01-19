@@ -51,6 +51,9 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
+
+      - name: Download packages
+        run: yarn
       
       - name: Lint packages
         run: yarn lint
@@ -89,15 +92,8 @@ jobs:
           node-version: '14'
           cache: 'yarn'
 
-      - name: Cache builds
-        id: cacheBuilds
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-build
-        with:
-          path: .next
-          key: ${{ runner.os }}-${{ env.cache-name }}
-          restore-keys: ${{ runner.os }}-${{ env.cache-name }}
+      - name: Download packages
+        run: yarn
           
       - name: Test
         run: yarn test
