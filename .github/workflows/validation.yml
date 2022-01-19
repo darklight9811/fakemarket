@@ -60,7 +60,6 @@ jobs:
 
   analyze:
     name: Analyze code for vulnerabilities
-    needs: setup
     runs-on: ubuntu-latest
 
     steps:
@@ -80,7 +79,7 @@ jobs:
 
   test:
     name: Test application
-    needs: [analyze, lint, audit]
+    needs: [lint, audit]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
