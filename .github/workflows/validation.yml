@@ -62,7 +62,7 @@ jobs:
 
   test:
     name: Test application
-    needs: [lint, audit]
+    needs: [lint]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
