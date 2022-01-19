@@ -18,6 +18,9 @@ jobs:
           node-version: '14'
           cache: 'yarn'
 
+      - name: Download packages
+        run: yarn
+
   audit:
     name: Audit for vulnerabilities
     needs: setup
@@ -49,7 +52,7 @@ jobs:
           node-version: '14'
           cache: 'yarn'
       
-      - name: Audit packages
+      - name: Lint packages
         run: yarn lint
 
   analyze:
