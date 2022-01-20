@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
+import Card from '../components/layout/Card'
+import List from '../components/layout/List'
 import useAsset from '../store/models/assets'
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
 	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
@@ -8,14 +9,12 @@ export default function Home() {
 	useEffect(() => { fetch() }, [])
 
 	return (
-		<div className={styles.container}>
-			{
-				!loading &&
-
-				<pre>
-					{JSON.stringify(list, null, 4)}
-				</pre>
-			}
+		<div>
+			<List
+				data={list.data.map(asset => ({ asset }))}
+				component={Card}
+				loading={loading}
+			/>
 		</div>
 	)
 }
