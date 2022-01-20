@@ -3,7 +3,7 @@ import create from "zustand"
 import pipe from "ramda/es/pipe"
 import shallow from 'zustand/shallow'
 import { useCallback, useMemo } from "react"
-import { subscribeWithSelector, persist } from "zustand/middleware"
+import { persist } from "zustand/middleware"
 
 // Utils
 import { only } from "./object"
@@ -15,7 +15,15 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 		return keyOrKeys ? only(state, keys) : state
 	}, [keys, keyOrKeys])
 
+	console.log(cb({ fetch: true, loading: false, list: false }))
+
 	return store(cb, shallow)
 }
 
-export const createStore = pipe(subscribeWithSelector, persist, create)
+export const createStore = pipe(persist, create) as typeof create
+
+export const paginationChanged = (curr, prev) =>
+	curr.list.limit !== prev.list.limit ||
+	curr.list.order !== prev.list.order ||
+	curr.list.page !== prev.list.page ||
+	curr.list.sort !== prev.list.sort

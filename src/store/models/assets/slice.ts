@@ -2,16 +2,15 @@
 import PaginationType from "../../../types/pagination"
 
 // Utils
-import { omit } from "../../../utils/object"
 import request from "../../../utils/request"
 
 // Model
 import assetInitialData from "./data"
-import { createStore } from "../../../utils/store"
+import { createStore, paginationChanged } from "../../../utils/store"
 
 type State = typeof assetInitialData
 
-const useAssetSlice = createStore((set, get) => ({
+const useAssetSlice = createStore((set: any, get: any) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------
@@ -23,10 +22,13 @@ const useAssetSlice = createStore((set, get) => ({
 	// -------------------------------------------------
 
 	fetch: async () => {
+		set(() => ({ loading: true }))
+
 		const { limit, page, order, sort } = (get() as State).list
 		const { data } = await request("atomicassets/v1/assets", { params: { limit, page, order, sort } })
 
-		set((state: State) => ({ 
+		set((state: State) => ({
+			loading: false,
 			list: {
 				...state.list,
 				data: data.data,
@@ -41,8 +43,12 @@ const useAssetSlice = createStore((set, get) => ({
 			}
 		}))
 	}
-}))
+}));
 
-useAssetSlice.subscribe(state => omit(state.list, ["data"]), useAssetSlice.getState().fetch)
+useAssetSlice.subscribe((curr, prev) => {
+	if (paginationChanged(curr, prev)) {
+		useAssetSlice.getState().fetch()
+	}
+})
 
 export default useAssetSlice

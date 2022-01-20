@@ -15,6 +15,8 @@ import { FilterObject } from "../../../types/object"
 const useAsset = <Return extends Parameters<Parameters<typeof useAssetSlice>[0]>[0], Keys extends (keyof Return)[]>(...key: Keys) => {
 	const extracted = useExtractFromStore(useAssetSlice, key as string[])
 
+	console.log(extracted)
+
 	return Object.values(extracted) as FilterObject<Return, Keys>
 }
 
