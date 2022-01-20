@@ -45,6 +45,10 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 	}
 }));
 
+// -------------------------------------------------
+// Listeners
+// -------------------------------------------------
+
 useAssetSlice.subscribe((curr, prev) => {
 	if (paginationChanged(curr, prev)) {
 		useAssetSlice.getState().fetch()
