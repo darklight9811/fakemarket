@@ -1,7 +1,3 @@
-// Packages
-import create from "zustand"
-import { subscribeWithSelector } from "zustand/middleware"
-
 // Types
 import PaginationType from "../../../types/pagination"
 
@@ -11,10 +7,11 @@ import request from "../../../utils/request"
 
 // Model
 import assetInitialData from "./data"
+import { createStore } from "../../../utils/store"
 
 type State = typeof assetInitialData
 
-const useAssetSlice = create(subscribeWithSelector((set, get) => ({
+const useAssetSlice = createStore((set, get) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------
@@ -44,7 +41,7 @@ const useAssetSlice = create(subscribeWithSelector((set, get) => ({
 			}
 		}))
 	}
-})))
+}))
 
 useAssetSlice.subscribe(state => omit(state.list, ["data"]), useAssetSlice.getState().fetch)
 

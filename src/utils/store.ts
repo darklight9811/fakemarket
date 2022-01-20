@@ -1,6 +1,9 @@
 // Packages
+import create from "zustand"
+import pipe from "ramda/es/pipe"
 import shallow from 'zustand/shallow'
 import { useCallback, useMemo } from "react"
+import { subscribeWithSelector, persist } from "zustand/middleware"
 
 // Utils
 import { only } from "./object"
@@ -14,3 +17,5 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 
 	return store(cb, shallow)
 }
+
+export const createStore = pipe(subscribeWithSelector, persist, create)
