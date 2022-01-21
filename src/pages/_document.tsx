@@ -1,5 +1,6 @@
+// Packages
 import { ServerStyleSheet } from 'styled-components';
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document<{ styleTags: JSX.Element }> {
 	static getInitialProps({ renderPage }) {
@@ -20,16 +21,17 @@ export default class MyDocument extends Document<{ styleTags: JSX.Element }> {
 
 	render() {
 		return (
-			<html>
+			<Html>
 				<Head>
-					{/* Step 5: Output the styles in the head  */}
 					{this.props.styleTags}
+
+					<link rel="shortcut icon" href="/favicon.svg" />
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
 				</body>
-			</html>
+			</Html>
 		);
 	}
 }

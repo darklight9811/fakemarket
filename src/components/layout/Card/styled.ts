@@ -25,8 +25,8 @@ export const Image = styled.img<{skeleton?: boolean}>`
 	background-image: linear-gradient(to right, transparent 0%, ${mapColor("background")} 50%, transparent 100%);
 	animation: ${backgroundOffset} 2s linear infinite;
 
-	padding: ${({ loading }) => loading ? "156px 110px" : 0};
+	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
 
-	width: ${({ loading }) => loading ? 0 : 220}px;
-	height: ${({ loading }) => loading ? 0 : 312}px;
+	width: ${({ skeleton }) => skeleton ? 0 : 220}px;
+	height: ${({ skeleton }) => skeleton ? 0 : 312}px;
 `

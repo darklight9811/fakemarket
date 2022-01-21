@@ -15,8 +15,6 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 		return keyOrKeys ? only(state, keys) : state
 	}, [keys, keyOrKeys])
 
-	console.log(cb({ fetch: true, loading: false, list: false }))
-
 	return store(cb, shallow)
 }
 

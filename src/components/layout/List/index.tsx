@@ -2,7 +2,6 @@
 import { Fragment, useMemo } from "react"
 
 // Component
-import * as styled from "./styled"
 import { PropTypes } from "./types"
 
 const List = (props: PropTypes) => {
@@ -11,7 +10,7 @@ const List = (props: PropTypes) => {
 	// -------------------------------------------------
 
 	const list = useMemo(() => {
-		if (props.loading) return Array.from(Array(5)).map(i => props.component({ loading: true }))
+		if (props.loading) return Array.from(Array((props.perRow || 4) * 2)).map(i => props.component({ loading: true }))
 
 		return props.data.map(item => {
 			return (
@@ -26,11 +25,7 @@ const List = (props: PropTypes) => {
 	// Render
 	// -------------------------------------------------
 
-	return (
-		<styled.Container>
-			{list}
-		</styled.Container>
-	)
+	return <>{list}</>
 }
 
 export default List
