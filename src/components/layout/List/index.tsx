@@ -1,5 +1,5 @@
 // Packages
-import { Fragment, useMemo } from "react"
+import { useMemo } from "react"
 
 // Component
 import { PropTypes } from "./types"
@@ -10,15 +10,11 @@ const List = (props: PropTypes) => {
 	// -------------------------------------------------
 
 	const list = useMemo(() => {
-		if (props.loading) return Array.from(Array((props.perRow || 4) * 2)).map(i => props.component({ loading: true }))
+		if (props.loading) return Array.from(Array((props.perRow || 4) * 2)).map((_, i) => <props.component key={i} loading />)
 
-		return props.data.map(item => {
-			return (
-				<Fragment key={item[props.id || "id"]}>
-					{props.component(item)}
-				</Fragment>
-			)
-		})
+		return props.data.map(item =>
+			<props.component key={item[props.id || "id"]} {...item} />
+		)
 	}, [props])
 
 	// -------------------------------------------------

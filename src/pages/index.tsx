@@ -34,14 +34,17 @@ export default function Home() {
 			<Head>
 				<title>FakeStore</title>
 			</Head>
-			<Box container horizontal="space-evenly" itemMargin={"15px 10px"}>
-				<List
-					data={list.data.map(asset => ({ asset }))}
-					component={Card}
-					loading={loading && list.data.length === 0}
-					id="asset_id"
-					perRow={4}
-				/>
+			<Box container>
+				<h1>NFTs</h1>
+
+				<Box horizontal="space-around" itemMargin={"15px 10px"}>
+					<List
+						data={list.data.map(asset => ({ id: asset.asset_id, asset }))}
+						component={Card}
+						loading={loading && list.data.length === 0}
+						perRow={4}
+					/>
+				</Box>
 			</Box>
 		</>
 	)

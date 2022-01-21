@@ -8,6 +8,9 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => ({
 	body: {
 		margin: 0,
 		backgroundColor: mapColor("background")({ theme }),
+		color: mapColor("contrast")({ theme }),
+		transitionProperty: "background-color, color",
+		transitionDuration: ".2s",
 	},
 	p: {
 		margin: "8px 0",

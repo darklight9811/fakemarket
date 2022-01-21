@@ -11,6 +11,7 @@ export const Box = styled.div<BoxProps>`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	height: 100%;
 
 	${({ itemMargin }) => itemMargin ? css`
 		& > * {
@@ -18,7 +19,7 @@ export const Box = styled.div<BoxProps>`
 		}
 	` : ""}
 
-	${({ vertical }) => vertical ? css`justify-content: ${vertical};`:""}
+	${({ vertical }) => vertical ? css`align-items: ${vertical};`:""}
 	${({ horizontal }) => horizontal ? css`justify-content: ${horizontal};`:""}
 
 	${({ container }) => container ? css`

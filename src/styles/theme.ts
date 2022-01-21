@@ -1,4 +1,6 @@
 const defaultTheme = {
+	mode: "light",
+
 	colors: {
 		// main colors
 		primary: "#6110C9",
@@ -18,6 +20,8 @@ const defaultTheme = {
 }
 
 export const darkTheme = {
+	mode: "dark",
+
 	colors: {
 		// theme colors
 		contrast: "light",

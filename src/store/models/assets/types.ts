@@ -1,4 +1,5 @@
 type AssetType = {
+	asset_id: string;
 	contract: string;
 	owner: string;
 	name: string;

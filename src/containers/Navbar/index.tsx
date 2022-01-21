@@ -1,16 +1,21 @@
 // Packages
 import Link from "next/link"
 import Image from "next/image"
+import { useMemo } from "react"
 
 // Components
 import Toggle from "../../components/form/Toggle"
 
 // Component
-import { Container } from "./styled"
+import * as styled from "./styled"
 import { NavbarProps } from "./types"
 import navbarItems from "../../resources/navbar"
+
+// Store
 import useConfig from "../../store/models/config"
-import { useMemo } from "react"
+
+// Styles
+import { Box } from "../../styles/layout"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -25,7 +30,7 @@ const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
 
 	const isToggled = useMemo(() => {
-		if (mode === "default") return window.matchMedia('(prefers-color-scheme: dark)').matches
+		if (mode === "default" && typeof window !== "undefined") return window.matchMedia('(prefers-color-scheme: dark)').matches
 
 		return mode === "dark"
 	}, [mode])
@@ -36,17 +41,20 @@ const Navbar = (props: NavbarProps) => {
 
 	return (
 		<>
-			<Container>
-				<Link href="/">
-					<a>
-						<Image src="/favicon.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
-					</a>
-				</Link>
+			<styled.Container>
+				<Box container vertical="center">
+					<styled.Link href="/">
+						<a>
+							<Image src="/favicon.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
+						</a>
+					</styled.Link>
 
-				{navbarItems.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+					{navbarItems.map(item => <styled.Link key={item.href} href={item.href}>{item.label}</styled.Link>)}
 
-				<Toggle value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
-			</Container>
+					<Toggle value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+				</Box>
+			</styled.Container>
+
 			{props.children}
 		</>
 	)
