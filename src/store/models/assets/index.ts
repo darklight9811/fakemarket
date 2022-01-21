@@ -1,4 +1,5 @@
 // Imports
+import { useMemo } from "react"
 import useAssetSlice from "./slice"
 
 // Utils
@@ -11,7 +12,6 @@ export { default as useAssetSlice } from "./slice"
 
 // Types
 import { FilterObject } from "../../../types/object"
-import { useMemo } from "react"
 
 const useAsset = <Return extends Parameters<Parameters<typeof useAssetSlice>[0]>[0], Keys extends (keyof Return)[]>(...key: Keys) => {
 	const extracted = useExtractFromStore(useAssetSlice, key as string[])

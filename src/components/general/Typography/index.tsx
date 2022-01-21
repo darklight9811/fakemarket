@@ -8,7 +8,7 @@ const Typography = (props: TypographyProps) => {
 	// -------------------------------------------------
 
 	return (
-		props.loading !== true ? <p>{props.children}</p> : <styled.Loading />
+		props.loading !== true ? <styled.Font {...props}>{props.children}</styled.Font> : <styled.Loading />
 	)
 }
 

@@ -26,6 +26,11 @@ export default class MyDocument extends Document<{ styleTags: JSX.Element }> {
 					{this.props.styleTags}
 
 					<link rel="shortcut icon" href="/favicon.svg" />
+
+					<link
+						href="https://fonts.googleapis.com/css2?family=Oswald&display=optional"
+						rel="stylesheet"
+					/>
 				</Head>
 				<body>
 					<Main />
