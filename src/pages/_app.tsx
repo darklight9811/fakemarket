@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------
 
 	// hooks
-	const [mode] = useConfig("mode")
+	const [mode, setMode] = useConfig("mode", "setMode")
 
 	// state
 	const [themeType, setThemeType] = useState("light")

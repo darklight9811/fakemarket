@@ -9,8 +9,27 @@ import Toggle from "../../components/form/Toggle"
 import { Container } from "./styled"
 import { NavbarProps } from "./types"
 import navbarItems from "../../resources/navbar"
+import useConfig from "../../store/models/config"
+import { useMemo } from "react"
 
 const Navbar = (props: NavbarProps) => {
+	// -------------------------------------------------
+	// Properties
+	// -------------------------------------------------
+
+	// hooks
+	const [mode, setMode] = useConfig("mode", "setMode")
+
+	// -------------------------------------------------
+	// Memos
+	// -------------------------------------------------
+
+	const isToggled = useMemo(() => {
+		if (mode === "default") return window.matchMedia('(prefers-color-scheme: dark)').matches
+
+		return mode === "dark"
+	}, [mode])
+
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -26,7 +45,7 @@ const Navbar = (props: NavbarProps) => {
 
 				{navbarItems.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
 
-				<Toggle />
+				<Toggle value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
 			</Container>
 			{props.children}
 		</>

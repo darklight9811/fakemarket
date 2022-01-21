@@ -1,10 +1,13 @@
-const Toggle = () => {
+// Component
+import { ToggleProps } from "./types"
+
+const Toggle = (props: ToggleProps) => {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return (
-		<input type="checkbox" />
+		<input checked={props.value} type="checkbox" onChange={(event) => props.onChange && props.onChange(event.target.checked)} />
 	)
 }
 

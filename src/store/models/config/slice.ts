@@ -15,7 +15,7 @@ const useAssetSlice = createStore((set: any) => ({
 	// Dispatches
 	// -------------------------------------------------
 
-	fetch: async (mode: "dark" | "light" | "default") => {
+	setMode: async (mode: "dark" | "light" | "default") => {
 		set(() => ({ mode }))
 	},
 }));
