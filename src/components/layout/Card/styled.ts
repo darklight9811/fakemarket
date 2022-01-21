@@ -21,7 +21,7 @@ export const Container = styled.div`
 	justify-items: center;
 `
 
-export const Image = styled.img<{ loading?: boolean }>`
+export const Image = styled.img<{skeleton?: boolean}>`
 	background-image: linear-gradient(to right, transparent 0%, ${mapColor("background")} 50%, transparent 100%);
 	animation: ${backgroundOffset} 2s linear infinite;
 

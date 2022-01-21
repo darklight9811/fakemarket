@@ -6,7 +6,7 @@ import useAsset from '../store/models/assets'
 export default function Home() {
 	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
 
-	useEffect(() => { fetch() }, [])
+	useEffect(() => { fetch() }, [fetch])
 
 	return (
 		<div>

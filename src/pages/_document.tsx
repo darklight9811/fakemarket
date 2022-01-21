@@ -1,8 +1,7 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-// Import styled components ServerStyleSheet
 import { ServerStyleSheet } from 'styled-components';
+import Document, { Head, Main, NextScript } from 'next/document';
 
-export default class MyDocument extends Document {
+export default class MyDocument extends Document<{ styleTags: JSX.Element }> {
 	static getInitialProps({ renderPage }) {
 		// Step 1: Create an instance of ServerStyleSheet
 		const sheet = new ServerStyleSheet();
