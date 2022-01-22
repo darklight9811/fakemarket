@@ -45,7 +45,7 @@ const Navbar = (props: NavbarProps) => {
 				<Box container vertical="center">
 					<styled.Link href="/">
 						<a>
-							<Image src="/favicon.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
+							<Image src="/logo.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
 						</a>
 					</styled.Link>
 

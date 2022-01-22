@@ -1,20 +1,24 @@
 // Packages
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 // Component
 import { PropTypes } from "./types"
 
 const List = (props: PropTypes) => {
 	// -------------------------------------------------
-	// Memos
+	// Properties
 	// -------------------------------------------------
 
-	const list = useMemo(() => {
-		if (props.loading) return Array.from(Array((props.perRow || 4) * 2)).map((_, i) => <props.component key={i} loading />)
+	// states
+	const [list, setlist] = useState([])
 
-		return props.data.map(item =>
-			<props.component key={item[props.id || "id"]} {...item} />
-		)
+	// -------------------------------------------------
+	// Effects
+	// -------------------------------------------------
+
+	useEffect(() => {
+		if (props.loading) setlist(Array.from(Array((props.perRow || 4) * 2)).map((_, i) => <props.component key={i} loading />))
+		else setlist(props.data.map(item => <props.component key={item[props.id || "id"]} {...item} />))
 	}, [props])
 
 	// -------------------------------------------------
