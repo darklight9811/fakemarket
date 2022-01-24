@@ -10,7 +10,6 @@ import Button from "../../general/Button"
 import Typography from "../../general/Typography"
 
 const Card = (props: CardProps) => {
-	console.log(props)
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -27,11 +26,13 @@ const Card = (props: CardProps) => {
 					<Typography loading={props.loading}><Typography bold>Rarity:</Typography> Common</Typography>
 				</p>
 
-				<Division />
+				<Division my="24px" />
 
-				<Typography loading={props.loading}>Fixed price</Typography>
+				<styled.Price>
+					<Typography loading={props.loading}>Fixed price</Typography>
 
-				{!props.loading && <Button>{props.asset?.price}</Button>}
+					{!props.loading && <Button>{props.asset?.price}</Button>}
+				</styled.Price>
 			</div>
 		</styled.Container>
 	)

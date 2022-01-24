@@ -46,6 +46,14 @@ export const Box = styled.div<BoxProps>`
 	` : ""};
 `
 
-export const Division = styled.hr<{ color?: string }>`
-	
+type margins = "m" | "mt" | "mb" | "ml" | "mr" | "mx" | "my"
+
+export const Division = styled.hr<{ [key in margins]?: string | number }>`
+	${({ m }) => m && css`margin: ${m};`}
+	${({ mt }) => mt && css`margin-top: ${mt};`}
+	${({ mb }) => mb && css`margin-bottom: ${mb};`}
+	${({ ml }) => ml && css`margin-left: ${ml};`}
+	${({ mr }) => mr && css`margin-right: ${mr};`}
+	${({ mx }) => mx && css`margin-left: ${mx}; margin-right: ${mx};`}
+	${({ my }) => my && css`margin-top: ${my}; margin-bottom: ${my};`}
 `

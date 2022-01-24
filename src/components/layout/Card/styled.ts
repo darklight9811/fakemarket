@@ -12,7 +12,7 @@ export const Container = styled.div`
 	animation: ${fadeIn} .5s;
 	
 	width: 258px;
-	height: 488px;
+	height: 448px;
 
 	padding: 20px;
 
@@ -38,4 +38,12 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 
 	width: ${({ skeleton }) => skeleton ? 0 : 220}px;
 	height: ${({ skeleton }) => skeleton ? 0 : 312}px;
+`
+
+export const Price = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	margin-top: 15px;
 `
