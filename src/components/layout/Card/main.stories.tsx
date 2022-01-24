@@ -33,7 +33,8 @@ const assetRef = {
 	name: "Cool asset",
 	data: {
 		img: "Qmam1XbS4Z3SNU1hZzZNNtV1o4V4hpAeRwCZ4nk1YMuech"
-	}
+	},
+	price: "0.001 WAX"
 }
 
 // -------------------------------------------------

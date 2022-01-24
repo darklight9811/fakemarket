@@ -1,4 +1,5 @@
-type AssetType = {
+export type RawAssetType = {
+	price: string;
 	asset_id: string;
 	contract: string;
 	owner: string;
@@ -52,5 +53,7 @@ type AssetType = {
 	minted_at_block: string;
 	minted_at_time: string;
 }
+
+type AssetType = Pick<RawAssetType, "asset_id" | "data" | "name"> & { id: string, price: string }
 
 export default AssetType

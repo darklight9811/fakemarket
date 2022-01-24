@@ -45,3 +45,7 @@ export const Box = styled.div<BoxProps>`
 		}
 	` : ""};
 `
+
+export const Division = styled.hr<{ color?: string }>`
+	
+`

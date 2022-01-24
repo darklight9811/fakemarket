@@ -1,11 +1,16 @@
 // Component
-import Typography from "../../general/Typography"
 import * as styled from "./styled"
 import { CardProps } from "./types"
 
+// Styles
+import { Division } from "../../../styles/layout"
+
+// Components
+import Button from "../../general/Button"
+import Typography from "../../general/Typography"
+
 const Card = (props: CardProps) => {
 	console.log(props)
-
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
@@ -21,6 +26,12 @@ const Card = (props: CardProps) => {
 				<p>
 					<Typography loading={props.loading}><Typography bold>Rarity:</Typography> Common</Typography>
 				</p>
+
+				<Division />
+
+				<Typography loading={props.loading}>Fixed price</Typography>
+
+				{!props.loading && <Button>{props.asset?.price}</Button>}
 			</div>
 		</styled.Container>
 	)
