@@ -41,7 +41,7 @@ export default function Home() {
 					<List
 						data={list.data.map(asset => ({ id: asset.asset_id, asset }))}
 						component={Card}
-						loading={loading && list.data.length === 0}
+						loading={loading}
 						perRow={4}
 					/>
 				</Box>

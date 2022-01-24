@@ -1,5 +1,5 @@
 // Packages
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 // Styles
 import { backgroundOffset, fadeIn } from "../../../styles/animations"
@@ -11,19 +11,28 @@ export const Container = styled.div`
 	background-color: ${mapColor("backgroundAlt")};
 	animation: ${fadeIn} .5s;
 	
-	width: 258;
-	height: 488;
+	width: 258px;
+	height: 488px;
 
 	padding: 20px;
 
 	display: flex;
 	flex-direction: column;
-	justify-items: center;
+	align-items: center;
+
+	& > div:nth-child(2) {
+		width: 100%;
+	} 
 `
 
-export const Image = styled.img<{skeleton?: boolean}>`
-	background-image: linear-gradient(to right, transparent 0%, ${mapColor("background")} 50%, transparent 100%);
-	animation: ${backgroundOffset} 2s linear infinite;
+export const Image = styled.div<{skeleton?: boolean, src: string}>`
+	background-size: ${({ skeleton }) => skeleton ? "1100% 100%": "contain"};
+	background-position: center;
+	background-repeat: no-repeat;
+	${({ skeleton }) => skeleton && css`animation: ${backgroundOffset} 1.5s linear infinite;`}
+	background-image: ${({ skeleton, src, theme }) => skeleton ?
+		`linear-gradient(to right, transparent, ${mapColor("background")({ theme })}, transparent)`:
+		`url(${src})`};
 
 	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
 

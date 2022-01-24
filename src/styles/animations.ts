@@ -1,11 +1,11 @@
-import { keyframes } from "styled-components";
+import { keyframes } from "styled-components"
 
 export const backgroundOffset = keyframes`
-	from {
-		background-position-x: 0;
+	0% {
+		background-position: 0% 0%;
 	}
-	to {
-		background-position-x: 14em;
+	100% {
+		background-position: 100% 0%;
 	}
 `
 
