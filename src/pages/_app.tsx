@@ -1,17 +1,14 @@
 // Packages
-import { ThemeProvider } from "styled-components"
-
-// Theme
-import defaultTheme, { darkTheme } from "../styles/theme"
-import GlobalStyle from "../styles/global"
+import { useCallback, useEffect, useState } from "react"
 
 // Store
 import useConfig from "../store/models/config"
 
 // Containers
 import Navbar from "../containers/Navbar"
-import { useCallback, useEffect, useMemo, useState } from "react"
-import { deepMerge } from "../utils/object"
+
+// Components
+import Provider from "../components/general/Provider"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------
@@ -19,7 +16,7 @@ function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------
 
 	// hooks
-	const [mode, setMode] = useConfig("mode", "setMode")
+	const [mode] = useConfig("mode")
 
 	// state
 	const [themeType, setThemeType] = useState("light")
@@ -51,24 +48,15 @@ function MyApp({ Component, pageProps }) {
 	}, [mode, updateMode])
 
 	// -------------------------------------------------
-	// Memos
-	// -------------------------------------------------
-
-	const theme = useMemo(() => {
-		return themeType === "light" ? defaultTheme : deepMerge(defaultTheme, darkTheme)
-	}, [themeType])
-
-	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
+		<Provider dark={themeType === "dark"}>
 			<Navbar>
 				<Component {...pageProps} />
 			</Navbar>
-		</ThemeProvider>
+		</Provider>
 	)
 }
 

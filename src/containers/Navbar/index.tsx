@@ -42,16 +42,16 @@ const Navbar = (props: NavbarProps) => {
 	return (
 		<>
 			<styled.Container>
-				<Box container vertical="center">
-					<styled.Link href="/">
-						<a>
-							<Image src="/logo.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
-						</a>
-					</styled.Link>
+				<Box container vertical="center" horizontal="space-around">
+					<Link href="/" passHref>
+						<styled.Link>
+							<Image src="/logo.svg" alt="fake market logo" width={14} height={14} /> FakeMarket
+						</styled.Link>
+					</Link>
 
-					{navbarItems.map(item => <styled.Link key={item.href} href={item.href}>{item.label}</styled.Link>)}
+					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Link>{item.label}</styled.Link></Link>)}
 
-					<Toggle value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+					<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
 				</Box>
 			</styled.Container>
 

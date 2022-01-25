@@ -1,5 +1,4 @@
 // Packages
-import NextLink from "next/link"
 import styled from "styled-components"
 
 // Utils
@@ -12,9 +11,16 @@ export const Container = styled.nav`
 
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
 
-	background-color: ${({ theme }) => theme.mode === "dark" ? theme.colors.darkAlt : theme.colors.background}
+	background-color: ${({ theme }) => theme.mode === "dark" ? theme.colors.darkAlt : theme.colors.background};
 `
 
-export const Link = styled(NextLink)`
+export const Link = styled.a`
 	color: ${mapColor("contrast")};
+	text-decoration: none;
+
+	font-size: 18px;
+
+	& img {
+		width: 14px;
+	}
 `
