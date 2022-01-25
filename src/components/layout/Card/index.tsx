@@ -16,7 +16,7 @@ const Card = (props: CardProps) => {
 
 	return (
 		<styled.Container>
-			<styled.Image skeleton={props.loading} src={`https://ipfs.atomichub.io/ipfs/${props.asset?.data?.img}`} />
+			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
 
 			<div>
 				<p>

@@ -1,8 +1,6 @@
 // Packages
 import axios from "axios"
 
-const request = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_API
-})
+const request = axios.create({})
 
 export default request
