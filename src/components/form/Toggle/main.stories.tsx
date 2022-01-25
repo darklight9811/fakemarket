@@ -10,17 +10,16 @@ export default Story({
 	title: "Toggle",
 	component: ToggleComponent,
 	argTypes: {
-		children: {
-			description: "The button's content",
-			type: "string",
-		},
-		onClick: {
-			description: "Callback when the user clicks the button",
+		onChange: {
+			description: "Callback when the user clicks the toggle",
 			type: "function"
+		},
+		value: {
+			description: "Initial value given to the toggle"
 		}
 	},
 	args: {
-		children: "Hi I\'m a button",
+		name: "test"
 	}
 })
 
