@@ -1,5 +1,5 @@
 // Packages
-import { useCallback, useEffect, useState } from "react"
+import { Suspense, useCallback, useEffect, useState } from "react"
 
 // Store
 import useConfig from "../store/models/config"

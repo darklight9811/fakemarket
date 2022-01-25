@@ -1,7 +1,7 @@
-import { lazy } from "react"
+import SearchIcon from "./search"
 
 const icons = {
-	search: lazy(() => import("./search"))
+	search: SearchIcon
 }
 
 export default icons

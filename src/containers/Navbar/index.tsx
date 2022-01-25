@@ -16,6 +16,7 @@ import useConfig from "../../store/models/config"
 
 // Styles
 import { Box } from "../../styles/layout"
+import Input from "../../components/form/Input"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -51,7 +52,10 @@ const Navbar = (props: NavbarProps) => {
 
 					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Link>{item.label}</styled.Link></Link>)}
 
-					<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+					<div>
+						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+						<Input placeholder="Search artwork" icon="search" />
+					</div>
 				</Box>
 			</styled.Container>
 
