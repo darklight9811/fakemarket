@@ -2,16 +2,16 @@
 import { ThemeProvider } from "styled-components"
 
 // Theme
-import defaultTheme, { darkTheme } from "../styles/theme"
-import GlobalStyle from "../styles/global"
+import defaultTheme, { darkTheme } from "../src/styles/theme"
+import GlobalStyle from "../src/styles/global"
 
 // Store
-import useConfig from "../store/models/config"
+import useConfig from "../src/store/models/config"
 
 // Containers
-import Navbar from "../containers/Navbar"
+import Navbar from "../src/containers/Navbar"
 import { useCallback, useEffect, useMemo, useState } from "react"
-import { deepMerge } from "../utils/object"
+import { deepMerge } from "../src/utils/object"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------

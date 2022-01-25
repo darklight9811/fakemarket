@@ -3,14 +3,14 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 
 // Components
-import Card from '../components/layout/Card'
-import List from '../components/layout/List'
+import Card from '../src/components/layout/Card'
+import List from '../src/components/layout/List'
 
 // Store
-import useAsset from '../store/models/assets'
+import useAsset from '../src/store/models/assets'
 
 // Styles
-import { Box } from '../styles/layout'
+import { Box } from '../src/styles/layout'
 
 export default function Home() {
 	// -------------------------------------------------
