@@ -26,7 +26,7 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 		set(() => ({ loading: true }))
 
 		const { limit, page, order, sort } = (get() as State).list
-		const { data } = await request("atomicassets/v1/assets", { params: { limit, page, order, sort } })
+		const { data } = await request("api/assets", { params: { limit, page, order, sort } })
 
 		set((state: State) => ({
 			loading: false,
