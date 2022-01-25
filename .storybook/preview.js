@@ -1,5 +1,6 @@
 // Decorators
 import styled from "./decorators/styled"
+import suspense from "./decorators/suspense"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,4 +15,5 @@ export const parameters = {
 
 export const decorators = [
 	styled,
+	suspense,
 ]
