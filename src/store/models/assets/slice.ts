@@ -7,6 +7,7 @@ import request from "../../../utils/request"
 // Model
 import assetInitialData from "./data"
 import { createStore, paginationChanged } from "../../../utils/store"
+import { sanitize } from "./utils"
 
 type State = typeof assetInitialData
 
@@ -31,7 +32,7 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 			loading: false,
 			list: {
 				...state.list,
-				data: data.data,
+				data: sanitize(data.data),
 			}
 		}))
 	},
@@ -44,6 +45,10 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 		}))
 	}
 }));
+
+// -------------------------------------------------
+// Listeners
+// -------------------------------------------------
 
 useAssetSlice.subscribe((curr, prev) => {
 	if (paginationChanged(curr, prev)) {

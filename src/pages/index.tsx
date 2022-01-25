@@ -1,21 +1,51 @@
+// Packages
+import Head from 'next/head'
 import { useEffect } from 'react'
+
+// Components
+import Card from '../components/layout/Card'
+import List from '../components/layout/List'
+
+// Store
 import useAsset from '../store/models/assets'
-import styles from '../styles/Home.module.css'
+
+// Styles
+import { Box } from '../styles/layout'
 
 export default function Home() {
+	// -------------------------------------------------
+	// Properties
+	// -------------------------------------------------
+
 	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
 
-	useEffect(() => { fetch() }, [])
+	// -------------------------------------------------
+	// Effects
+	// -------------------------------------------------
+
+	useEffect(() => { fetch() }, [fetch])
+
+	// -------------------------------------------------
+	// Render
+	// -------------------------------------------------
 
 	return (
-		<div className={styles.container}>
-			{
-				!loading &&
+		<>
+			<Head>
+				<title>FakeStore</title>
+			</Head>
+			<Box container>
+				<h1>NFTs</h1>
 
-				<pre>
-					{JSON.stringify(list, null, 4)}
-				</pre>
-			}
-		</div>
+				<Box horizontal="space-around" itemMargin={"15px 10px"}>
+					<List
+						data={list.data.map(asset => ({ id: asset.asset_id, asset }))}
+						component={Card}
+						loading={loading}
+						perRow={4}
+					/>
+				</Box>
+			</Box>
+		</>
 	)
 }

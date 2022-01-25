@@ -1,10 +1,13 @@
+// Component
+import * as styled from "./styled"
+
 const Button = (props) => {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return (
-		<button {...props} />
+		<styled.Container {...props} />
 	)
 }
 
