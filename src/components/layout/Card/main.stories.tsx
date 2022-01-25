@@ -1,5 +1,5 @@
 // Component
-import Card from "."
+import CardComponent from "."
 import { Story } from "../../../utils/types"
 
 // -------------------------------------------------
@@ -8,7 +8,7 @@ import { Story } from "../../../utils/types"
 
 export default Story({
 	title: "Card",
-	component: Card,
+	component: CardComponent,
 	argTypes: {
 		loading: {
 			description: "Show the component's skeleton type",
@@ -41,4 +41,4 @@ const assetRef = {
 // Stories
 // -------------------------------------------------
 
-export const Primary = (props) => <Card asset={assetRef as any} {...props} />
+export const Card = (props) => <CardComponent asset={assetRef as any} {...props} />
