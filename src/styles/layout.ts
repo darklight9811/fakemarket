@@ -7,6 +7,7 @@ type BoxProps = Partial<{
 	round: number | string;
 	background: keyof typeof defaultTheme["colors"];
 	container: boolean;
+	direction: "row" | "column";
 	vertical: "top" | "center" | "bottom";
 	horizontal: "left" | "center" | "right" | "space-around" | "space-between" | "space-evenly";
 	itemMargin: number | string;
@@ -14,7 +15,7 @@ type BoxProps = Partial<{
 
 export const Box = styled.div<BoxProps>`
 	display: flex;
-	flex-direction: row;
+	flex-direction: ${({ direction }) => direction || "row"};
 	flex-wrap: wrap;
 	height: 100%;
 

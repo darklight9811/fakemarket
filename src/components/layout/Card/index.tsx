@@ -8,14 +8,33 @@ import { Division } from "../../../styles/layout"
 // Components
 import Button from "../../general/Button"
 import Typography from "../../general/Typography"
+import { useModal } from "../Modal"
+import useAsset from "../../../store/models/assets"
 
 const Card = (props: CardProps) => {
+	// -------------------------------------------------
+	// Properties
+	// -------------------------------------------------
+
+	// hooks
+	const { open } = useModal()
+	const [select] = useAsset("select")
+
+	// -------------------------------------------------
+	// Callbacks
+	// -------------------------------------------------
+
+	const onSelect = () => {
+		open("buy-asset")
+		select(props.asset.id)
+	}
+
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
 	return (
-		<styled.Container>
+		<styled.Container onClick={onSelect}>
 			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
 
 			<div>

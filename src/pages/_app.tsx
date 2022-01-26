@@ -5,10 +5,11 @@ import { Suspense, useCallback, useEffect, useState } from "react"
 import useConfig from "../store/models/config"
 
 // Containers
-import Navbar from "../containers/Navbar"
+import Navbar from "../components/layout/Navbar"
 
 // Components
 import Provider from "../components/general/Provider"
+import Modal from "../components/layout/Modal"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------
@@ -53,9 +54,11 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<Provider dark={themeType === "dark"}>
-			<Navbar>
-				<Component {...pageProps} />
-			</Navbar>
+			<Modal.Provider>
+				<Navbar>
+					<Component {...pageProps} />
+				</Navbar>
+			</Modal.Provider>
 		</Provider>
 	)
 }

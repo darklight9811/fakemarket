@@ -22,6 +22,15 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 	// Dispatches
 	// -------------------------------------------------
 
+	buy: (id: string) => {
+		set((state) => ({ bought: [...state.bought, id] }))
+	},
+	select: async (id: string) => {
+		const { list } = get() as State
+		const selected = list.data.find(item => item.id === id)
+
+		set(() => ({ selected }))
+	},
 	fetch: async () => {
 		set(() => ({ loading: true }))
 

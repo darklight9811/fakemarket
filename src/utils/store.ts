@@ -6,7 +6,7 @@ import { useCallback, useMemo } from "react"
 import { persist } from "zustand/middleware"
 
 // Utils
-import { only } from "./object"
+import { omit, only } from "./object"
 
 export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 	const keys = useMemo(() => Array.isArray(keyOrKeys) ? keyOrKeys : [keyOrKeys], [keyOrKeys])
@@ -18,7 +18,10 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 	return store(cb, shallow)
 }
 
-export const createStore = pipe(persist, create) as typeof create
+export const createStore = pipe(
+	(...args: [any]) => persist(...args, { name: "fakestore", partialize: (state) => omit(state, "open") }),
+	create,
+) as typeof create
 
 export const paginationChanged = (curr, prev) =>
 	curr.list.limit !== prev.list.limit ||

@@ -4,21 +4,21 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 // Components
-import Toggle from "../../components/form/Toggle"
+import Toggle from "../../form/Toggle"
 
 // Component
 import * as styled from "./styled"
 import { NavbarProps } from "./types"
-import navbarItems from "../../resources/navbar"
+import navbarItems from "../../../resources/navbar"
 
 // Store
-import useConfig from "../../store/models/config"
+import useConfig from "../../../store/models/config"
 
 // Styles
-import { Box } from "../../styles/layout"
-import Input from "../../components/form/Input"
-import User from "../../components/general/User"
-import useAuth from "../../store/models/auth"
+import { Box } from "../../../styles/layout"
+import Input from "../../form/Input"
+import User from "../../general/User"
+import useAuth from "../../../store/models/auth"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------

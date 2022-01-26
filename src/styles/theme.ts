@@ -4,6 +4,8 @@ const defaultTheme = {
 	colors: {
 		// main colors
 		primary: "#6110C9",
+		danger: "#FF6969",
+		success: "#0F7D48",
 
 		// contrast colors
 		dark: "#000",

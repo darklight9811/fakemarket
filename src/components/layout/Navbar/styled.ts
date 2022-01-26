@@ -2,7 +2,7 @@
 import styled from "styled-components"
 
 // Utils
-import { mapColor } from "../../utils/theme"
+import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.nav`
 	height: 70px;

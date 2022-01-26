@@ -7,6 +7,7 @@ import type PaginationType from "../../../types/pagination";
 const assetInitialData = {
 	selected: undefined as AssetType | undefined,
 	loading: false,
+	bought: [] as string[],
 	list: {
 		data: [],
 		page: 1,
