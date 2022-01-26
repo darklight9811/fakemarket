@@ -17,6 +17,7 @@ import useConfig from "../../store/models/config"
 // Styles
 import { Box } from "../../styles/layout"
 import Input from "../../components/form/Input"
+import User from "../../components/general/User"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -43,7 +44,7 @@ const Navbar = (props: NavbarProps) => {
 	return (
 		<>
 			<styled.Container>
-				<Box container vertical="center" horizontal="space-around">
+				<Box container vertical="center" horizontal="space-between">
 					<Link href="/" passHref>
 						<styled.Link>
 							<Image src="/logo.svg" alt="fake market logo" width={14} height={14} /> FakeMarket
@@ -52,8 +53,12 @@ const Navbar = (props: NavbarProps) => {
 
 					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Link>{item.label}</styled.Link></Link>)}
 
-					<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
-					<Input placeholder="Search artwork" icon="search" />
+					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
+						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+						<Input placeholder="Search artwork" icon="search" />
+
+						<User user={{ id: "1", name: "Leslie Alexander", avatar: "/user.png" }} showName />
+					</Box>
 				</Box>
 			</styled.Container>
 

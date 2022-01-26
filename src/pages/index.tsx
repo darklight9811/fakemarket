@@ -40,7 +40,7 @@ export default function Home() {
 				<Box
 					p="24px"
 					round="10px"
-					background='darkAlt'
+					background='backgroundAlt'
 					itemMargin={"15px 10px"}
 					horizontal="space-around"
 				>
