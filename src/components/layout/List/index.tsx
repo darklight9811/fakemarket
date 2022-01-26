@@ -1,5 +1,5 @@
 // Packages
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 
 // Component
 import { PropTypes } from "./types"
