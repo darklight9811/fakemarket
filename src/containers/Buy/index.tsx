@@ -1,15 +1,30 @@
+// Styles
 import { Box } from "../../styles/layout"
 
+// Store
 import useAsset from "../../store/models/assets"
-import Image from "next/image"
+
+// Components
 import Button from "../../components/general/Button"
+import { useModal } from "../../components/Modal"
 
 const Buy = () => {
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------
 
-	const [asset] = useAsset("selected")
+	// hooks
+	const { close } = useModal()
+	const [asset, dispatch] = useAsset("selected", "buy")
+
+	// -------------------------------------------------
+	// Callbacks
+	// -------------------------------------------------
+
+	const buy = () => {
+		dispatch(asset?.id)
+		close()
+	}
 
 	// -------------------------------------------------
 	// Render
@@ -21,11 +36,11 @@ const Buy = () => {
 	return (
 		<Box vertical="center" horizontal="center" direction="column">
 			<h2>Confirm purchase?</h2>
-			<Image src={`/api/img/${asset?.data?.img}`} width={178} height={252} alt={asset?.name} />
+			<img src={`/api/img/${asset?.data?.img}`} height={252} alt={asset?.name} />
 
 			<Box m="44px" itemMargin="0 22px">
-				<Button>Cancel</Button>
-				<Button>Buy</Button>
+				<Button onClick={close}>Cancel</Button>
+				<Button onClick={buy}>Buy</Button>
 			</Box>
 		</Box>
 	)
