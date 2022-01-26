@@ -1,7 +1,7 @@
 // Packages
 import Link from "next/link"
 import Image from "next/image"
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 // Components
 import Toggle from "../../components/form/Toggle"
@@ -27,14 +27,16 @@ const Navbar = (props: NavbarProps) => {
 	// hooks
 	const [mode, setMode] = useConfig("mode", "setMode")
 
+	// states
+	const [isToggled, setToggled] = useState(false)
+
 	// -------------------------------------------------
 	// Memos
 	// -------------------------------------------------
 
-	const isToggled = useMemo(() => {
-		if (mode === "default" && typeof window !== "undefined") return window.matchMedia('(prefers-color-scheme: dark)').matches
-
-		return mode === "dark"
+	useEffect(() => {
+		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		else setToggled(mode === "dark")
 	}, [mode])
 
 	// -------------------------------------------------
@@ -55,6 +57,7 @@ const Navbar = (props: NavbarProps) => {
 
 					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
 						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+
 						<Input placeholder="Search artwork" icon="search" />
 
 						<User user={{ id: "1", name: "Leslie Alexander", avatar: "/user.png" }} showName />
