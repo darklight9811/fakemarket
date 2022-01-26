@@ -39,8 +39,8 @@ const Buy = () => {
 			<img src={`/api/img/${asset?.data?.img}`} height={252} alt={asset?.name} />
 
 			<Box m="44px" itemMargin="0 22px">
-				<Button onClick={close}>Cancel</Button>
-				<Button onClick={buy}>Buy</Button>
+				<Button width="107px" onClick={close} color="danger">Cancel</Button>
+				<Button width="107px" onClick={buy} color="success">Buy</Button>
 			</Box>
 		</Box>
 	)
