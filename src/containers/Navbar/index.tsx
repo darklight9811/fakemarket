@@ -52,10 +52,8 @@ const Navbar = (props: NavbarProps) => {
 
 					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Link>{item.label}</styled.Link></Link>)}
 
-					<div>
-						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
-						<Input placeholder="Search artwork" icon="search" />
-					</div>
+					<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+					<Input placeholder="Search artwork" icon="search" />
 				</Box>
 			</styled.Container>
 

@@ -1,4 +1,5 @@
 // Decorators
+import theme from "./decorators/theme"
 import styled from "./decorators/styled"
 import suspense from "./decorators/suspense"
 
@@ -13,7 +14,21 @@ export const parameters = {
   },
 }
 
+export const globalTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'Light',
+        toolbar: {
+            icon: 'switchalt',
+            items: ['Light', 'Dark'],
+            showName: true,
+        },
+    },
+}
+
 export const decorators = [
+	theme,
 	styled,
 	suspense,
 ]
