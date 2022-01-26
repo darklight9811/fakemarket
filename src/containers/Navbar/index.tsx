@@ -18,6 +18,7 @@ import useConfig from "../../store/models/config"
 import { Box } from "../../styles/layout"
 import Input from "../../components/form/Input"
 import User from "../../components/general/User"
+import useAuth from "../../store/models/auth"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -25,6 +26,7 @@ const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
 
 	// hooks
+	const [user] = useAuth("data")
 	const [mode, setMode] = useConfig("mode", "setMode")
 
 	// states
@@ -60,7 +62,7 @@ const Navbar = (props: NavbarProps) => {
 
 						<Input placeholder="Search artwork" icon="search" />
 
-						<User user={{ id: "1", name: "Leslie Alexander", avatar: "/user.png" }} showName />
+						<User user={user} showName />
 					</Box>
 				</Box>
 			</styled.Container>

@@ -4,7 +4,7 @@ import { createStore } from "../../../utils/store"
 
 type State = typeof initialData
 
-const useAssetSlice = createStore((set: any) => ({
+const useConfigSlice = createStore((set: any) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------
@@ -20,4 +20,4 @@ const useAssetSlice = createStore((set: any) => ({
 	},
 }));
 
-export default useAssetSlice
+export default useConfigSlice
