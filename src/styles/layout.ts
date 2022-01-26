@@ -1,11 +1,16 @@
 import styled, { css } from "styled-components";
+import { marginProp, paddingProp } from "../types/layout";
+import { mapColor, margin, padding } from "../utils/theme";
+import defaultTheme from "./theme";
 
 type BoxProps = Partial<{
+	round: number | string;
+	background: keyof typeof defaultTheme["colors"];
 	container: boolean;
 	vertical: "top" | "center" | "bottom";
 	horizontal: "left" | "center" | "right" | "space-around" | "space-between" | "space-evenly";
 	itemMargin: number | string;
-}>
+}> & marginProp & paddingProp
 
 export const Box = styled.div<BoxProps>`
 	display: flex;
@@ -44,16 +49,17 @@ export const Box = styled.div<BoxProps>`
 			width: 1320px;
 		}
 	` : ""};
+
+	${({ background, theme }) => background ? css`background-color: ${mapColor(background, theme)};`:""}
+
+	${({ round }) => round ? `border-radius: ${round};`: ""}
+
+	${margin}
+	${padding}
 `
 
-type margins = "m" | "mt" | "mb" | "ml" | "mr" | "mx" | "my"
 
-export const Division = styled.hr<{ [key in margins]?: string | number }>`
-	${({ m }) => m && css`margin: ${m};`}
-	${({ mt }) => mt && css`margin-top: ${mt};`}
-	${({ mb }) => mb && css`margin-bottom: ${mb};`}
-	${({ ml }) => ml && css`margin-left: ${ml};`}
-	${({ mr }) => mr && css`margin-right: ${mr};`}
-	${({ mx }) => mx && css`margin-left: ${mx}; margin-right: ${mx};`}
-	${({ my }) => my && css`margin-top: ${my}; margin-bottom: ${my};`}
+export const Division = styled.hr<marginProp & paddingProp>`
+	${margin}
+	${padding}
 `

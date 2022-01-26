@@ -11,7 +11,7 @@ export const Container = styled.nav`
 
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
 
-	background-color: ${({ theme }) => theme.mode === "dark" ? theme.colors.darkAlt : theme.colors.background};
+	background-color: ${({ theme }) => theme.mode === "dark" ? "#212121" : theme.colors.background};
 `
 
 export const Link = styled.a`

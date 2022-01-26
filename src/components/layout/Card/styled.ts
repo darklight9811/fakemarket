@@ -8,7 +8,7 @@ import { backgroundOffset, fadeIn } from "../../../styles/animations"
 import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
-	background-color: ${mapColor("backgroundAlt")};
+	background-color: ${mapColor("background")};
 	animation: ${fadeIn} .5s;
 	
 	width: 258px;
@@ -20,6 +20,8 @@ export const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 
+	border-radius: 0 0 8px 8px;
+	
 	& > div:nth-child(2) {
 		width: 100%;
 	} 

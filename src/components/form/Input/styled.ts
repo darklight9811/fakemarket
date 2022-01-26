@@ -18,6 +18,7 @@ export const Container = styled.label`
 `
 
 export const Input = styled.input`
+	color: ${mapColor("contrast")};
 	border: transparent;
 	background-color: transparent;
 
