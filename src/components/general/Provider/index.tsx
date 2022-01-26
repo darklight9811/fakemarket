@@ -2,7 +2,8 @@
 import { useMemo } from "react"
 import { ThemeProvider } from "styled-components"
 
-// Theme
+// Style
+import GlobalStyle from "../../../styles/global"
 import defaultTheme, { darkTheme } from "../../../styles/theme"
 
 // Utils
@@ -26,6 +27,7 @@ const Provider = (props: ProviderProps) => {
 
 	return (
 		<ThemeProvider theme={theme}>
+			<GlobalStyle />
 			{props.children}
 		</ThemeProvider>
 	)

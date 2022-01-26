@@ -37,9 +37,15 @@ export default function Home() {
 			<Box container>
 				<h1>NFTs</h1>
 
-				<Box horizontal="space-around" itemMargin={"15px 10px"}>
+				<Box
+					p="24px"
+					round="10px"
+					background='backgroundAlt'
+					itemMargin={"15px 10px"}
+					horizontal="space-around"
+				>
 					<List
-						data={list.data.map(asset => ({ id: asset.asset_id, asset }))}
+						data={list.data.map(asset => ({ id: asset.id, asset }))}
 						component={Card}
 						loading={loading}
 						perRow={4}

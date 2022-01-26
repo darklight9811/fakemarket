@@ -1,7 +1,7 @@
 // Packages
 import Link from "next/link"
 import Image from "next/image"
-import { useMemo } from "react"
+import { useEffect, useState } from "react"
 
 // Components
 import Toggle from "../../components/form/Toggle"
@@ -16,6 +16,8 @@ import useConfig from "../../store/models/config"
 
 // Styles
 import { Box } from "../../styles/layout"
+import Input from "../../components/form/Input"
+import User from "../../components/general/User"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -25,14 +27,16 @@ const Navbar = (props: NavbarProps) => {
 	// hooks
 	const [mode, setMode] = useConfig("mode", "setMode")
 
+	// states
+	const [isToggled, setToggled] = useState(false)
+
 	// -------------------------------------------------
 	// Memos
 	// -------------------------------------------------
 
-	const isToggled = useMemo(() => {
-		if (mode === "default" && typeof window !== "undefined") return window.matchMedia('(prefers-color-scheme: dark)').matches
-
-		return mode === "dark"
+	useEffect(() => {
+		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		else setToggled(mode === "dark")
 	}, [mode])
 
 	// -------------------------------------------------
@@ -42,16 +46,22 @@ const Navbar = (props: NavbarProps) => {
 	return (
 		<>
 			<styled.Container>
-				<Box container vertical="center">
-					<styled.Link href="/">
-						<a>
-							<Image src="/logo.svg" alt="fake market logo" width={28} height={28} /> FakeMarket
-						</a>
-					</styled.Link>
+				<Box container vertical="center" horizontal="space-between">
+					<Link href="/" passHref>
+						<styled.Link>
+							<Image src={mode === "dark" ? "/logo-white.svg" : "/logo.svg"} alt="fake market logo" width={14} height={14} /> FakeMarket
+						</styled.Link>
+					</Link>
 
-					{navbarItems.map(item => <styled.Link key={item.href} href={item.href}>{item.label}</styled.Link>)}
+					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Navlink>{item.label}</styled.Navlink></Link>)}
 
-					<Toggle value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
+						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
+
+						<Input placeholder="Search artwork" icon="search" />
+
+						<User user={{ id: "1", name: "Leslie Alexander", avatar: "/user.png" }} showName />
+					</Box>
 				</Box>
 			</styled.Container>
 

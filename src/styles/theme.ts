@@ -7,7 +7,7 @@ const defaultTheme = {
 
 		// contrast colors
 		dark: "#000",
-		darkAlt: "#242424",
+		darkAlt: "#3D3D3D",
 		light: "#FFF",
 		lightAlt: "#F3F3F3",
 

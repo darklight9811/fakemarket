@@ -13,4 +13,8 @@ export const Container = styled.button`
 	border-radius: 16px;
 
 	padding: 4px 8px;
+
+	&:hover {
+		cursor: pointer;
+	}
 `
