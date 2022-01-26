@@ -47,7 +47,7 @@ export default function Home() {
 					horizontal="space-around"
 				>
 					<List
-						data={list.data.map(asset => ({ id: asset.id, asset }))}
+						data={list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)).map(asset => ({ id: asset.id, asset }))}
 						component={Card}
 						loading={loading}
 						perRow={4}
