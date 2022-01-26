@@ -1,5 +1,6 @@
 // Packages
-import { createPortal, useContext, useEffect, useMemo } from "preact/compat"
+import { useContext, useEffect, useMemo } from "react"
+import { createPortal } from "react-dom"
 
 // Contexts
 import modalContext from "./context"
@@ -49,7 +50,7 @@ const ModalMain: unknown = (props: Props) => {
 					onClick={() => isCloseable && close()}
 				/>
 				<styled.Modal style={{ maxWidth: props.width }} key={props.id}>
-					<div class="d-flex">
+					<div className="d-flex">
 						<div>
 							{props.title && <styled.Title>{props.title}</styled.Title>}
 							{
@@ -60,7 +61,7 @@ const ModalMain: unknown = (props: Props) => {
 
 						{isCloseable && (
 							<styled.Button type="button" onClick={() => close()}>
-								<i class="fa fa-times" />
+								<i className="fa fa-times" />
 							</styled.Button>
 						)}
 					</div>

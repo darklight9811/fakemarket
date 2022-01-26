@@ -1,10 +1,11 @@
 import styled from "styled-components"
+import { mapColor } from "../../utils/theme"
 
 // -------------------------------------------------
 // Container
 // -------------------------------------------------
 
-export const Container = styled.div`
+export const Container = styled.div<{ open: boolean}>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -44,7 +45,7 @@ export const Background = styled.div`
 // -------------------------------------------------
 
 export const Modal = styled.div`
-	background-color: ${({theme}) => theme.colors.white};
+	background-color: ${mapColor("backgroundAlt")};
 
 	position: absolute;
 	display: inline-block;
@@ -80,7 +81,7 @@ export const Modal = styled.div`
 	}
 
 	svg * {
-		stroke: ${({theme}) => theme.colors.white};
+		stroke: ${mapColor("background")};
 	}
 
 	div {
@@ -96,7 +97,7 @@ export const Button = styled.button`
 	background: transparent;
 	border: none;
 
-	color: ${({theme}) => theme.colors.black};
+	color: ${mapColor("contrast")};
 	transition: color .2s ease;
 	
 	float: right;
@@ -111,7 +112,7 @@ export const Button = styled.button`
 	font-size: 20px;
 
 	&:hover svg {
-		filter: drop-shadow(0 0 2px ${({theme}) => theme.colors.black});
+		filter: drop-shadow(0 0 2px ${mapColor("contrast")});
 	}
 
 	&:hover {
@@ -124,7 +125,7 @@ export const Button = styled.button`
 		transition: filter .2s ease;
 
 		* {
-			stroke: ${({theme}) => theme.colors.black};
+			stroke: ${mapColor("contrast")};
 		}
 	}
 `

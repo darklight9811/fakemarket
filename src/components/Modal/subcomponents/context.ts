@@ -1,8 +1,8 @@
 // Packages
-import React from "react"
+import { createContext } from "react"
 
 // Interfaces
 import { Context } from "../types"
 
-const modalContext = React.createContext({} as Context)
+const modalContext = createContext({} as Context)
 export default modalContext

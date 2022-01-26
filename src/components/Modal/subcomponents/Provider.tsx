@@ -11,7 +11,7 @@ import ModalContext from "./context"
 import * as styled from "../styled"
 
 // Services
-import ModalService from "services/modal"
+import useModalConfig from "../../../store/models/modal"
 
 const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	// -------------------------------------------------
@@ -22,7 +22,7 @@ const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	const container = React.useRef<HTMLDivElement>()
 
 	// models
-	const [ data, dispatch ] = ModalService.useModel()
+	const [display, open, onOpen, onClose] = useModalConfig("display", "open", "onOpen", "onClose")
 
 	// -------------------------------------------------
 	// Render
@@ -31,9 +31,9 @@ const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	return (
 		<ModalContext.Provider
 			value={{
-				display: data.display,
-				open: dispatch.onOpen,
-				close: dispatch.onClose,
+				display: display,
+				open: onOpen,
+				close: onClose,
 				element: container.current as Element,
 			}}
 		>
@@ -41,7 +41,7 @@ const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 
 			<styled.Container
 				id="modal-background"
-				open={data.open}
+				open={open}
 				ref={container as any}
 			/>
 		</ModalContext.Provider>
