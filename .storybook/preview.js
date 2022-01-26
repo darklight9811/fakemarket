@@ -28,7 +28,7 @@ export const globalTypes = {
 }
 
 export const decorators = [
-	theme,
 	styled,
+	theme,
 	suspense,
 ]

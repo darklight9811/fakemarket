@@ -23,6 +23,10 @@ export const Container = styled.div`
 	& > div:nth-child(2) {
 		width: 100%;
 	} 
+
+	&:hover {
+		cursor: pointer;
+	}
 `
 
 export const Image = styled.div<{skeleton?: boolean, src: string}>`
