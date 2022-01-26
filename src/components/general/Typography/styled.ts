@@ -9,7 +9,8 @@ import { mapColor } from "../../../utils/theme";
 import { TypographyProps } from "./types";
 
 export const Font = styled.span<TypographyProps>`
-	${({ bold }) => bold ? `font-weight: ${typeof bold === "boolean" ? "bold" : bold}` : ""}
+	${({ bold }) => bold ? `font-weight: ${typeof bold === "boolean" ? "bold" : bold};` : ""}
+	${({ fs: size }) => size && `font-size: ${typeof size === "number" ? `${size}px`:size};`}
 `
 
 export const Loading = styled.span<{ loading?: boolean }>`

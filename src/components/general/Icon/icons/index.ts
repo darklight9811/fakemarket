@@ -1,7 +1,9 @@
+import BoxesIcon from "./boxes"
 import SearchIcon from "./search"
 
 const icons = {
-	search: SearchIcon
+	search: SearchIcon,
+	boxes: BoxesIcon,
 }
 
 export default icons

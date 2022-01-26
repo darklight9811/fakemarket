@@ -1,11 +1,17 @@
 // Packages
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // Components
 import Card from '../components/layout/Card'
 import List from '../components/layout/List'
 import Modal from '../components/layout/Modal'
+import Row from '../components/layout/Row'
+import Button from '../components/general/Button'
+import Icon from '../components/general/Icon'
+import Typography from '../components/general/Typography'
+
+// Containers
 import Buy from '../containers/Buy'
 
 // Store
@@ -19,6 +25,10 @@ export default function Home() {
 	// Properties
 	// -------------------------------------------------
 
+	// states
+	const [useCard, setUseCard] = useState(true)
+
+	// hooks
 	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
 
 	// -------------------------------------------------
@@ -37,10 +47,14 @@ export default function Home() {
 				<title>FakeStore</title>
 			</Head>
 			<Box container>
-				<h1>NFTs</h1>
+				<Box fill mb="24px" vertical="center" horizontal="space-between">
+					<Typography fs={32}>NFTs</Typography>
+					<Button onClick={() => setUseCard(s => !s)}><Icon name="boxes" /></Button>
+				</Box>
 
 				<Box
 					p="24px"
+					mb="48px"
 					round="10px"
 					background='backgroundAlt'
 					itemMargin={"15px 10px"}
@@ -48,7 +62,7 @@ export default function Home() {
 				>
 					<List
 						data={list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)).map(asset => ({ id: asset.id, asset }))}
-						component={Card}
+						component={useCard ? Card : Row}
 						loading={loading}
 						perRow={4}
 					/>
