@@ -1,28 +1,5 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { mapColor } from "../../utils/theme"
-
-// -------------------------------------------------
-// Container
-// -------------------------------------------------
-
-export const Container = styled.div<{ open: boolean}>`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	position: fixed;
-	z-index: 1000;
-
-	width: 100%;
-	height: 100%;
-
-	top: 0;
-	left: 0;
-
-	opacity: ${({ open }) => open ? 1:0};
-	transition: opacity .2s ease;
-	${({ open }) => open ? "":"pointer-events: none"};
-`
 
 // -------------------------------------------------
 // Background
@@ -86,6 +63,33 @@ export const Modal = styled.div`
 
 	div {
 		animation: fadein .2s ease;
+	}
+`
+
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
+
+export const Container = styled.div<{ open: boolean }>`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: fixed;
+	z-index: 1000;
+
+	width: 100%;
+	height: 100%;
+
+	top: 0;
+	left: 0;
+
+	opacity: ${({ open }) => open ? 1:0};
+	transition: opacity .2s ease;
+	${({ open }) => open ? "":"pointer-events: none"};
+
+	${Modal} {
+		${({ open }) => open && css`transform: translate(0, -24px)`}
 	}
 `
 

@@ -39,7 +39,7 @@ const ModalMain: unknown = (props: Props) => {
 	// Render
 	// -------------------------------------------------
 
-	if (display === props.id) {
+	if (display === props.id && element) {
 		return createPortal((
 			<>
 				<styled.Background

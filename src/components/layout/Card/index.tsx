@@ -9,6 +9,7 @@ import { Division } from "../../../styles/layout"
 import Button from "../../general/Button"
 import Typography from "../../general/Typography"
 import { useModal } from "../../Modal"
+import useAsset from "../../../store/models/assets"
 
 const Card = (props: CardProps) => {
 	// -------------------------------------------------
@@ -17,6 +18,7 @@ const Card = (props: CardProps) => {
 
 	// hooks
 	const { open } = useModal()
+	const [select] = useAsset("select")
 
 	// -------------------------------------------------
 	// Callbacks
@@ -24,6 +26,7 @@ const Card = (props: CardProps) => {
 
 	const onSelect = () => {
 		open("buy-asset")
+		select(props.asset.id)
 	}
 
 	// -------------------------------------------------
