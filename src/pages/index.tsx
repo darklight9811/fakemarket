@@ -5,6 +5,8 @@ import { useEffect } from 'react'
 // Components
 import Card from '../components/layout/Card'
 import List from '../components/layout/List'
+import Modal from '../components/Modal'
+import Buy from '../containers/Buy'
 
 // Store
 import useAsset from '../store/models/assets'
@@ -52,6 +54,10 @@ export default function Home() {
 					/>
 				</Box>
 			</Box>
+
+			<Modal id="buy-asset">
+				<Buy />
+			</Modal>
 		</>
 	)
 }

@@ -56,7 +56,7 @@ export const Modal = styled.div`
 	border-radius: .28571429rem;
 
 	width: calc(100% - 32px);
-	max-width: 950px;
+	max-width: 420px;
 
 	transform: translate(0, -50px);
 	transition: transform .3s ease;
