@@ -1,7 +1,7 @@
 // Packages
 import Link from "next/link"
 import Image from "next/image"
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 
 // Components
 import Toggle from "../../components/form/Toggle"
@@ -49,7 +49,7 @@ const Navbar = (props: NavbarProps) => {
 				<Box container vertical="center" horizontal="space-between">
 					<Link href="/" passHref>
 						<styled.Link>
-							<Image src="/logo.svg" alt="fake market logo" width={14} height={14} /> FakeMarket
+							<Image src={mode === "dark" ? "/logo-white.svg" : "/logo.svg"} alt="fake market logo" width={14} height={14} /> FakeMarket
 						</styled.Link>
 					</Link>
 

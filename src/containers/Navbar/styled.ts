@@ -15,7 +15,7 @@ export const Container = styled.nav`
 `
 
 export const Link = styled.a`
-	color: ${mapColor("contrast")};
+	color: ${({ theme }) => mapColor(theme.mode === "light" ? "primary" : "contrast")};
 	text-decoration: none;
 
 	font-size: 18px;

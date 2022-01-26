@@ -12,10 +12,10 @@ const Toggle = (props: ToggleProps) => {
 	const [checked, setChecked] = useState(props.value)
 
 	// -------------------------------------------------
-	// Effects
+	// Render
 	// -------------------------------------------------
 
-	useEffect(() => props.onChange?.(checked), [checked, props])
+	useEffect(() => { if (checked !== props.value) setChecked(props.value) }, [checked, props.value])
 
 	// -------------------------------------------------
 	// Render
@@ -28,7 +28,7 @@ const Toggle = (props: ToggleProps) => {
 				name={props.name}
 				checked={checked}
 				type="checkbox"
-				onChange={() => setChecked(last => !last)}
+				onChange={() => setChecked(last => { props.onChange?.(!last); return !last })}
 			/>
 		</styled.Container>
 	)
