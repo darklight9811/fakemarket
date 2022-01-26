@@ -6,7 +6,7 @@ import useAsset from "../../store/models/assets"
 
 // Components
 import Button from "../../components/general/Button"
-import { useModal } from "../../components/Modal"
+import { useModal } from "../../components/layout/Modal"
 
 const Buy = () => {
 	// -------------------------------------------------

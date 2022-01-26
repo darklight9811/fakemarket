@@ -11,7 +11,7 @@ import ModalContext from "./context"
 import * as styled from "../styled"
 
 // Services
-import useModalConfig from "../../../store/models/modal"
+import useModalConfig from "../../../../store/models/modal"
 
 const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
 	// -------------------------------------------------

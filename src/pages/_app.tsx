@@ -9,7 +9,7 @@ import Navbar from "../components/layout/Navbar"
 
 // Components
 import Provider from "../components/general/Provider"
-import Modal from "../components/Modal"
+import Modal from "../components/layout/Modal"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------

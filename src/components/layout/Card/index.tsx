@@ -8,7 +8,7 @@ import { Division } from "../../../styles/layout"
 // Components
 import Button from "../../general/Button"
 import Typography from "../../general/Typography"
-import { useModal } from "../../Modal"
+import { useModal } from "../Modal"
 import useAsset from "../../../store/models/assets"
 
 const Card = (props: CardProps) => {

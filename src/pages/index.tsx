@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 // Components
 import Card from '../components/layout/Card'
 import List from '../components/layout/List'
-import Modal from '../components/Modal'
+import Modal from '../components/layout/Modal'
 import Buy from '../containers/Buy'
 
 // Store

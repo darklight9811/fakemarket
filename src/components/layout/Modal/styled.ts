@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { mapColor } from "../../utils/theme"
+import { mapColor } from "../../../utils/theme"
 
 // -------------------------------------------------
 // Background
