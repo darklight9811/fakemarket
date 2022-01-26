@@ -1,31 +1,41 @@
 // Component
-import ButtonComponent from "."
+import Component, { useModal } from "."
 import { Story } from "../../../utils/types"
+import Button from "../../general/Button"
 
 // -------------------------------------------------
 // Config
 // -------------------------------------------------
 
 export default Story({
-	title: "Button",
-	component: ButtonComponent,
+	title: "Modal",
+	component: Component,
 	argTypes: {
 		children: {
-			description: "The button's content",
+			description: "Content to be displayed inside the modal",
 			type: "string",
 		},
-		onClick: {
-			description: "Callback when the user clicks the button",
-			type: "function"
-		}
 	},
 	args: {
-		children: "Hi I\'m a button",
-	}
+		id: "test-modal",
+		children: "Hi I\'m a modal",
+	},
+	decorators: [
+		Story => <Component.Provider><Story /></Component.Provider>
+	]
 })
 
 // -------------------------------------------------
 // Stories
 // -------------------------------------------------
 
-export const Button = (props) => <ButtonComponent {...props} />
+export const Modal = (props) => {
+	const { open } = useModal()
+
+	return (
+		<>
+			<Button onClick={() => open("test-modal")}>Open me</Button>
+			<Component {...props} />
+		</>
+	)
+}

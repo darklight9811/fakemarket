@@ -31,7 +31,7 @@ export const Modal = styled.div`
 	margin: auto;
 	padding: 2rem;
 
-	border-radius: .28571429rem;
+	border-radius: 10px;
 
 	width: calc(100% - 32px);
 	max-width: 420px;
