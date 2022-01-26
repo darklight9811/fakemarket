@@ -1,7 +1,8 @@
-type User = { id: string; avatar: string; name: string; };
+// Types
+import { UserType } from "../../../store/models/auth/types";
 
 export type UserProps = {
-	user: User;
-	onClick?: (user: User) => void;
+	user: UserType;
+	onClick?: (user: UserType) => void;
 	showName?: boolean;
 }
