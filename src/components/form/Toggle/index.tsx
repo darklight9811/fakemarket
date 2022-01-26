@@ -1,5 +1,7 @@
-// Component
+// Packages
 import { useEffect, useState } from "react"
+
+// Component
 import * as styled from "./styled"
 import { ToggleProps } from "./types"
 

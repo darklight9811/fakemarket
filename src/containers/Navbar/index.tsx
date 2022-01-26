@@ -53,7 +53,7 @@ const Navbar = (props: NavbarProps) => {
 						</styled.Link>
 					</Link>
 
-					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Link>{item.label}</styled.Link></Link>)}
+					{navbarItems.map(item => <Link key={item.href} href={item.href} passHref><styled.Navlink>{item.label}</styled.Navlink></Link>)}
 
 					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
 						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />

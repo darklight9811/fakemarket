@@ -6,6 +6,7 @@ import { mapColor } from "../../utils/theme"
 
 export const Container = styled.nav`
 	height: 70px;
+	position: relative;
 
 	margin-bottom: 40px;
 
@@ -22,5 +23,29 @@ export const Link = styled.a`
 
 	& img {
 		width: 14px;
+	}
+`
+
+export const Navlink = styled.a`
+	color: ${mapColor("contrast")};
+	text-decoration: none;
+
+	font-size: 18px;
+
+	& img {
+		width: 14px;
+	}
+
+	&:before {
+		content: "";
+
+		width: 55px;
+		height: 3px;
+
+		position: absolute;
+
+		background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "primary" : "contrast")};
+
+		bottom: 0;
 	}
 `
