@@ -1,10 +1,8 @@
-# FakeMarket technical test
-
 <div align="center">
 	<img src="public/presentation.gif" />
 </div>
 
-[![Main](https://github.com/darklight9811/fakemarket/actions/workflows/validation.yml/badge.svg)](https://github.com/darklight9811/fakemarket/actions/workflows/validation.yml) [![Deployment](https://badgen.net/badge/vercel/deployment/purple?icon=github)](https://fakemarket.vercel.app/)
+## ![Logo](public/favicon.svg) FakeMarket technical test
 
 Welcome to the technical test, you can checkout the requirements [here](https://www.figma.com/file/ox2tPvQ0owSI8dazlutaJk/test?node-id=0%3A1), this test was made by [Rafael Correa](https://github.com/darklight9811). You can checkout the test online with [vercel](https://fakemarket.vercel.app/) or download the project.
 
