@@ -15,6 +15,10 @@ export const Container = styled.label`
 	svg {
 		margin-right: 10px;
 	}
+
+	&:hover {
+		cursor: pointer;
+	}
 `
 
 export const Select = styled.select`
@@ -23,4 +27,8 @@ export const Select = styled.select`
 	background-color: transparent;
 
 	width: 100%;
+
+	&:hover {
+		cursor: pointer;
+	}
 `

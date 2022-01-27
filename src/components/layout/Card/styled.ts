@@ -8,8 +8,9 @@ import { backgroundOffset, fadeIn } from "../../../styles/animations"
 import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
-	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
 	animation: ${fadeIn} .5s;
+	transition: transform .3s ease, box-shadow .4s ease;
+	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
 	
 	width: 258px;
 	height: 448px;
@@ -28,6 +29,8 @@ export const Container = styled.div`
 
 	&:hover {
 		cursor: pointer;
+		transform: scale(1.03);
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
 	}
 `
 
