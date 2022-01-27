@@ -2,9 +2,10 @@
 import styled from "styled-components";
 
 // Utils
-import { mapColor } from "../../../utils/theme";
+import { mapColor, shadeColor } from "../../../utils/theme";
 
 export const Container = styled.button<{ color?: "primary" | "danger" | "success", width?: string }>`
+	transition: background-color .2s ease, box-shadow .2s ease;
 	background-color: ${({ color }) => color ? mapColor(color):"transparent"};
 
 	color: ${({ color }) => mapColor(color ? "light" : "contrast")};
@@ -21,5 +22,7 @@ export const Container = styled.button<{ color?: "primary" | "danger" | "success
 
 	&:hover {
 		cursor: pointer;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+		background-color: ${({ color, theme }) => color ? shadeColor(mapColor(color, theme), 20):"transparent"};
 	}
 `

@@ -12,6 +12,10 @@ export const Container = styled.label<{checked?: boolean}>`
 		cursor: pointer;
 	}
 
+	&:hover:after {
+		right: ${({ checked }) => checked ? "23%" : "-17%"};
+	}
+
 	& > input {
 		display: none;
 	}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { mapColor } from "../../../utils/theme";
 
 export const Container = styled.label`
+	transition: box-shadow .4s ease;
 	background-color: ${mapColor("backgroundAlt")};
 
 	padding: 10px 20px;
@@ -18,6 +19,7 @@ export const Container = styled.label`
 
 	&:hover {
 		cursor: pointer;
+		box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
 	}
 `
 

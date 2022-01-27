@@ -36,7 +36,13 @@ export const Navlink = styled.a`
 		width: 14px;
 	}
 
+	&:hover:before {
+		width: 70px;
+	}
+
 	&:before {
+		transition: width .3s ease;
+
 		content: "";
 
 		width: 55px;
