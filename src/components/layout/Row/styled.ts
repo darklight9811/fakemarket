@@ -16,9 +16,12 @@ export const Container = styled.div`
 
 	padding: 20px;
 
+	z-index: 0;
 	display: flex;
-	flex-direction: column;
+	overflow: hidden;
+	position: relative;
 	align-items: center;
+	flex-direction: column;
 
 	border-radius: 8px;
 	
@@ -55,4 +58,15 @@ export const Price = styled.div`
 	justify-content: space-around;
 
 	margin-top: 15px;
+`
+
+export const Backdrop = styled.img`
+	z-index: -1;
+	opacity: 0.05;
+
+	position: absolute;
+	top: -5%;
+	left: 5%;
+
+	width: 100px;
 `
