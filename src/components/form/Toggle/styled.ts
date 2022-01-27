@@ -1,5 +1,12 @@
+// Packages
 import styled from "styled-components"
+
+// Utils
 import { mapColor } from "../../../utils/theme"
+
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
 
 export const Container = styled.label<{checked?: boolean}>`
 	position: relative;

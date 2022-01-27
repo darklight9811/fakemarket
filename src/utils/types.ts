@@ -1,6 +1,6 @@
 // Packages
-import { JSXElementConstructor } from 'react';
-import { ComponentMeta } from '@storybook/react';
+import { JSXElementConstructor } from "react"
+import { ComponentMeta } from "@storybook/react"
 
 type ArgType = {
 	description: string;
@@ -15,4 +15,4 @@ type ArgType = {
 
 export const Story = <
 	Component extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>
->(config: ComponentMeta<Component> & { argTypes?: { [key: string]: Partial<ArgType> } }) => config;
+>(config: ComponentMeta<Component> & { argTypes?: { [key: string]: Partial<ArgType> } }) => config

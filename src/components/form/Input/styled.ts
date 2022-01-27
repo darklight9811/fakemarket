@@ -1,5 +1,12 @@
-import styled from "styled-components";
-import { mapColor } from "../../../utils/theme";
+// Packages
+import styled from "styled-components"
+
+// Utils
+import { mapColor } from "../../../utils/theme"
+
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
 
 export const Container = styled.label`
 	background-color: ${mapColor("backgroundAlt")};
@@ -16,6 +23,10 @@ export const Container = styled.label`
 		margin-right: 10px;
 	}
 `
+
+// -------------------------------------------------
+// Input
+// -------------------------------------------------
 
 export const Input = styled.input`
 	color: ${mapColor("contrast")};

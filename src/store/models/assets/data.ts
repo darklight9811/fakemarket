@@ -1,8 +1,8 @@
 // Types
-import type AssetType from "./types";
+import type AssetType from "./types"
 
 // Model
-import type PaginationType from "../../../types/pagination";
+import type PaginationType from "../../../types/pagination"
 
 const assetInitialData = {
 	selected: undefined as AssetType | undefined,

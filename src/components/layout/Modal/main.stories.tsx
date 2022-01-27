@@ -18,11 +18,11 @@ export default Story({
 	},
 	args: {
 		id: "test-modal",
-		children: "Hi I\'m a modal",
+		children: "Hi I'm a modal",
 	},
 	decorators: [
-		Story => <Component.Provider><Story /></Component.Provider>
-	]
+		Story => <Component.Provider><Story /></Component.Provider>,
+	],
 })
 
 // -------------------------------------------------

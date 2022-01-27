@@ -1,4 +1,4 @@
-// Component
+// Packages
 import { createElement } from "react"
 
 // Component

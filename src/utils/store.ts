@@ -1,7 +1,7 @@
 // Packages
 import create from "zustand"
 import pipe from "ramda/es/pipe"
-import shallow from 'zustand/shallow'
+import shallow from "zustand/shallow"
 import { useCallback, useMemo } from "react"
 import { persist } from "zustand/middleware"
 

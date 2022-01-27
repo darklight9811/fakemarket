@@ -1,15 +1,13 @@
 // Packages
-import { Suspense, useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 // Store
 import useConfig from "../store/models/config"
 
-// Containers
-import Navbar from "../components/layout/Navbar"
-
 // Components
-import Provider from "../components/general/Provider"
 import Modal from "../components/layout/Modal"
+import Navbar from "../components/layout/Navbar"
+import Provider from "../components/general/Provider"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------
@@ -38,12 +36,12 @@ function MyApp({ Component, pageProps }) {
 		if (mode !== "default") return setThemeType(mode)
 
 		if (window.matchMedia) {
-			setThemeType(window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light")
+			setThemeType(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
 
-			window.matchMedia('(prefers-color-scheme: dark').addEventListener("change", updateMode)
+			window.matchMedia("(prefers-color-scheme: dark").addEventListener("change", updateMode)
 
 			return () => {
-				window.matchMedia('(prefers-color-scheme: dark').removeEventListener("change", updateMode)
+				window.matchMedia("(prefers-color-scheme: dark").removeEventListener("change", updateMode)
 			}
 		}
 	}, [mode, updateMode])

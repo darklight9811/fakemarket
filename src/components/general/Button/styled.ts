@@ -1,8 +1,12 @@
 // Packages
-import styled from "styled-components";
+import styled from "styled-components"
 
 // Utils
-import { mapColor, shadeColor } from "../../../utils/theme";
+import { mapColor, shadeColor } from "../../../utils/theme"
+
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
 
 export const Container = styled.button<{ color?: "primary" | "danger" | "success", width?: string }>`
 	transition: background-color .2s ease, box-shadow .2s ease;

@@ -8,6 +8,6 @@ const useAuthSlice = createStore("auth")(() => ({
 	// -------------------------------------------------
 
 	...initialData,
-}));
+}))
 
 export default useAuthSlice

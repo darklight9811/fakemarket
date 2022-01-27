@@ -1,6 +1,8 @@
 // Component
 import Component from "."
 import { Story } from "../../../utils/types"
+
+// Utils
 import icons from "../../general/Icon/icons"
 
 // -------------------------------------------------
@@ -13,29 +15,29 @@ export default Story({
 	argTypes: {
 		name: {
 			description: "Value to be used with the label for and form keyword",
-			type: "string"
+			type: "string",
 		},
 		onChange: {
 			description: "Callback when the user changes the input value",
-			type: "function"
+			type: "function",
 		},
 		placeholder: {
 			description: "Text to be displayed when there is no value in the input",
-			type: "string"
+			type: "string",
 		},
 		icon: {
 			description: "Icon to be used prefixing the form",
 			options: Object.keys(icons),
 			control: {
-				type: "select"
-			}
-		}
+				type: "select",
+			},
+		},
 	},
 	args: {
 		name: "test",
 		placeholder: "Test input",
 		icon: "search",
-	}
+	},
 })
 
 // -------------------------------------------------

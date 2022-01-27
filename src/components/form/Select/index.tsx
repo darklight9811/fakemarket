@@ -1,4 +1,4 @@
-// Packages
+// Components
 import Icon from "../../general/Icon"
 
 // Component

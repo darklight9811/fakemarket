@@ -15,13 +15,13 @@ export default Story({
 			description: "Name of the icon to be used",
 			options: Object.keys(icons),
 			control: {
-				type: "select"
-			}
+				type: "select",
+			},
 		},
 	},
 	args: {
 		name: "search",
-	}
+	},
 })
 
 // -------------------------------------------------

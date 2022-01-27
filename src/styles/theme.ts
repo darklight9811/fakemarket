@@ -17,8 +17,8 @@ const defaultTheme = {
 		contrast: "dark",
 		contrastAlt: "darkAlt",
 		background: "light",
-		backgroundAlt: "lightAlt"
-	}
+		backgroundAlt: "lightAlt",
+	},
 }
 
 export const darkTheme = {
@@ -30,7 +30,7 @@ export const darkTheme = {
 		contrastAlt: "lightAlt",
 		background: "dark",
 		backgroundAlt: "darkAlt",
-	}
+	},
 }
 
 export default defaultTheme
