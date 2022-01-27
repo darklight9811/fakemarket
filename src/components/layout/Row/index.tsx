@@ -25,7 +25,7 @@ const Row = (props: CardProps) => {
 	// -------------------------------------------------
 
 	const onSelect = () => {
-		if (props.asset) {
+		if (props.asset && !props.loading) {
 			open("buy-asset")
 			select(props.asset.id)
 		}
