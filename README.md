@@ -19,3 +19,7 @@ You can also run: `yarn lint`, `yarn audit` or `yarn test` to check the integrit
 ## Documentation
 
 You can check out general documentation and design documentation inside [github discussions](https://github.com/darklight9811/fakemarket/discussions), feel free to comment, suggest and ask. We are always looking for improvement and the best way is to talk!
+
+## Storybook
+
+This application comes with a simple storybook to help you use most of our components. Sadly is not online, so you will have to download the repo and run it locally to use it.
