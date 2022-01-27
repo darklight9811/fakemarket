@@ -21,6 +21,6 @@ const GlobalStyle = createGlobalStyle`
 	svg path {
 		fill: ${mapColor("contrast")};
 	}
-`;
+`
 
 export default GlobalStyle

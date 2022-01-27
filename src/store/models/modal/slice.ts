@@ -2,8 +2,6 @@
 import initialData from "./data"
 import { createStore } from "../../../utils/store"
 
-type State = typeof initialData
-
 const useModalSlice = createStore("modal")((set: any) => ({
 	// -------------------------------------------------
 	// State
@@ -20,7 +18,7 @@ const useModalSlice = createStore("modal")((set: any) => ({
 	},
 	onClose: async () => {
 		set(() => ({open: false}))
-	}
-}));
+	},
+}))
 
 export default useModalSlice

@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import { marginProp, paddingProp } from "../types/layout";
-import { mapColor, margin, padding } from "../utils/theme";
-import defaultTheme from "./theme";
+import styled, { css } from "styled-components"
+import { marginProp, paddingProp } from "../types/layout"
+import { mapColor, margin, padding } from "../utils/theme"
+import defaultTheme from "./theme"
 
 type BoxProps = Partial<{
 	round: number | string;

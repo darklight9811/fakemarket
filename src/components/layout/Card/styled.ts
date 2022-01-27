@@ -7,6 +7,10 @@ import { backgroundOffset, fadeIn } from "../../../styles/animations"
 // Utils
 import { mapColor } from "../../../utils/theme"
 
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
+
 export const Container = styled.div`
 	animation: ${fadeIn} .5s;
 	transition: transform .3s ease, box-shadow .4s ease;
@@ -34,6 +38,10 @@ export const Container = styled.div`
 	}
 `
 
+// -------------------------------------------------
+// Image
+// -------------------------------------------------
+
 export const Image = styled.div<{skeleton?: boolean, src: string}>`
 	background-size: ${({ skeleton }) => skeleton ? "1100% 100%": "contain"};
 	background-position: center;
@@ -48,6 +56,10 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 	width: ${({ skeleton }) => skeleton ? 0 : 220}px;
 	height: ${({ skeleton }) => skeleton ? 0 : 312}px;
 `
+
+// -------------------------------------------------
+// Price
+// -------------------------------------------------
 
 export const Price = styled.div`
 	display: flex;

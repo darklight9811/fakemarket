@@ -1,8 +1,8 @@
 const navbarItems = [
 	{
 		href: "/",
-		label: "Dashboard"
-	}
+		label: "Dashboard",
+	},
 ]
 
 export default navbarItems
