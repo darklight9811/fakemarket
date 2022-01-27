@@ -25,8 +25,10 @@ const Card = (props: CardProps) => {
 	// -------------------------------------------------
 
 	const onSelect = () => {
-		open("buy-asset")
-		select(props.asset.id)
+		if (props.asset) {
+			open("buy-asset")
+			select(props.asset.id)
+		}
 	}
 
 	// -------------------------------------------------
