@@ -13,8 +13,8 @@ export default Story({
 	argTypes: {
 		onClick: {
 			description: "Callback when the user clicks the user component",
-			type: "function"
-		}
+			type: "function",
+		},
 	},
 	args: {
 		user: {
@@ -22,8 +22,8 @@ export default Story({
 			name: "Leslie Alexander",
 			avatar: img,
 		},
-		children: "Hi I\'m a button",
-	}
+		children: "Hi I'm a button",
+	},
 })
 
 // -------------------------------------------------

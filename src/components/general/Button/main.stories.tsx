@@ -16,12 +16,12 @@ export default Story({
 		},
 		onClick: {
 			description: "Callback when the user clicks the button",
-			type: "function"
-		}
+			type: "function",
+		},
 	},
 	args: {
-		children: "Hi I\'m a button",
-	}
+		children: "Hi I'm a button",
+	},
 })
 
 // -------------------------------------------------

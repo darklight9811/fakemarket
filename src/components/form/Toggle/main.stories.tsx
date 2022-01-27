@@ -12,15 +12,15 @@ export default Story({
 	argTypes: {
 		onChange: {
 			description: "Callback when the user clicks the toggle",
-			type: "function"
+			type: "function",
 		},
 		value: {
-			description: "Initial value given to the toggle"
-		}
+			description: "Initial value given to the toggle",
+		},
 	},
 	args: {
-		name: "test"
-	}
+		name: "test",
+	},
 })
 
 // -------------------------------------------------

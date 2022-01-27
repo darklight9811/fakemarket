@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { mapColor } from "../../../utils/theme";
+import styled from "styled-components"
+import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.label`
 	transition: box-shadow .4s ease;

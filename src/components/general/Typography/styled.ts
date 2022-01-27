@@ -1,12 +1,12 @@
 // Packages
-import styled from "styled-components";
+import styled from "styled-components"
 
 // Theme
-import { backgroundOffset } from "../../../styles/animations";
+import { backgroundOffset } from "../../../styles/animations"
 
 // Utils
-import { mapColor } from "../../../utils/theme";
-import { TypographyProps } from "./types";
+import { mapColor } from "../../../utils/theme"
+import { TypographyProps } from "./types"
 
 export const Font = styled.span<TypographyProps>`
 	${({ bold }) => bold ? `font-weight: ${typeof bold === "boolean" ? "bold" : bold};` : ""}

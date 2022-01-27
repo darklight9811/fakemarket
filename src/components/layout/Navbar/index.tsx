@@ -44,7 +44,7 @@ const Navbar = (props: NavbarProps) => {
 	}, [filter, paginate])
 
 	useEffect(() => {
-		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia("(prefers-color-scheme: dark)").matches)
 		else setToggled(mode === "dark")
 	}, [mode])
 

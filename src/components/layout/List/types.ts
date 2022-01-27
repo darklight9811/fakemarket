@@ -14,4 +14,4 @@ export type PropTypes<ListType extends Record<string, any> = Record<string, any>
 	 * Setting this prop will force the item to behave and passed.
 	 */
 	perRow?: number;
-  }
+}
