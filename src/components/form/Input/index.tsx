@@ -1,5 +1,7 @@
 // Packages
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+
+// Components
 import Icon from "../../general/Icon"
 
 // Component
@@ -11,8 +13,19 @@ const Input = (props: InputProps) => {
 	// Properties
 	// -------------------------------------------------
 
+	// states
+	const [value, setvalue] = useState(props.value || "")
+
 	// refs
 	const timer = useRef<NodeJS.Timeout>()
+
+	// -------------------------------------------------
+	// Effects
+	// -------------------------------------------------
+
+	useEffect(() => {
+		setvalue(props.value)
+	}, [props.value])
 
 	// -------------------------------------------------
 	// Callbacks
@@ -28,6 +41,8 @@ const Input = (props: InputProps) => {
 			timer.current = undefined
 		}
 
+		setvalue(value)
+
 		timer.current = setTimeout(() => props.onChange(value), props.debounce * 1000)
 	}
 
@@ -38,7 +53,7 @@ const Input = (props: InputProps) => {
 	return (
 		<styled.Container>
 			{props.icon && <Icon name={props.icon} />}
-			<styled.Input {...props} onChange={(e) => onChange(e.target.value)} />
+			<styled.Input {...props} value={value} onChange={(e) => onChange(e.target.value)} />
 		</styled.Container>
 	)
 }

@@ -8,6 +8,7 @@ const assetInitialData = {
 	selected: undefined as AssetType | undefined,
 	loading: false,
 	bought: [] as string[],
+	error: undefined as Error | undefined,
 	list: {
 		data: [],
 		page: 1,

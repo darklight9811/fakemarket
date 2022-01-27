@@ -35,15 +35,17 @@ const useAssetSlice = createStore("asset")((set: any, get: any) => ({
 		set(() => ({ loading: true }))
 
 		const { limit, page, order, sort, filter } = (get() as State).list
-		const { data } = await request("api/assets", { params: { limit, page, order, sort, ...(filter ? {match: filter}:{}) } })
+		const { data } = await request("api/assets", { params: { limit, page, order, sort, ...(filter ? {match: filter}:{}) } }).catch(error => set(() => ({ error })))
 
-		set((state: State) => ({
-			loading: false,
-			list: {
-				...state.list,
-				data: sanitize(data.data),
-			}
-		}))
+		if (data.data) {
+			set((state: State) => ({
+				loading: false,
+				list: {
+					...state.list,
+					data: sanitize(data.data),
+				}
+			}))
+		}
 	},
 	paginate: (props: Partial<Omit<PaginationType, "data">>) => {
 		set((state: State) => ({
