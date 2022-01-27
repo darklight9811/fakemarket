@@ -1,6 +1,13 @@
+// Packages
 import styled, { css } from "styled-components"
+
+// Types
 import { marginProp, paddingProp } from "../types/layout"
+
+// Utils
 import { mapColor, margin, padding } from "../utils/theme"
+
+// Style
 import defaultTheme from "./theme"
 
 type BoxProps = Partial<{

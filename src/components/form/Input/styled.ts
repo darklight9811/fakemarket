@@ -1,4 +1,7 @@
+// Packages
 import styled from "styled-components"
+
+// Utils
 import { mapColor } from "../../../utils/theme"
 
 // -------------------------------------------------

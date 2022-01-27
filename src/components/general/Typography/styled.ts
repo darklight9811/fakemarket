@@ -1,11 +1,13 @@
 // Packages
 import styled from "styled-components"
 
-// Theme
+// Style
 import { backgroundOffset } from "../../../styles/animations"
 
 // Utils
 import { mapColor } from "../../../utils/theme"
+
+// Types
 import { TypographyProps } from "./types"
 
 // -------------------------------------------------

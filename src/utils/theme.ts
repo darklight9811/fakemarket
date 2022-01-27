@@ -1,3 +1,4 @@
+// Types
 import { ThemeInterface } from "../styles/styled"
 import { marginProp, paddingProp } from "../types/layout"
 

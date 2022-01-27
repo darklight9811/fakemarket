@@ -1,4 +1,7 @@
+// Packages
 import { createGlobalStyle } from "styled-components"
+
+// Utils
 import { mapColor } from "../utils/theme"
 
 const GlobalStyle = createGlobalStyle`

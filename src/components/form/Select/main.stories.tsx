@@ -1,6 +1,8 @@
 // Component
 import Component from "."
 import { Story } from "../../../utils/types"
+
+// Utils
 import icons from "../../general/Icon/icons"
 
 // -------------------------------------------------

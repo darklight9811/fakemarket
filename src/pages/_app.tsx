@@ -4,12 +4,10 @@ import { useCallback, useEffect, useState } from "react"
 // Store
 import useConfig from "../store/models/config"
 
-// Containers
-import Navbar from "../components/layout/Navbar"
-
 // Components
-import Provider from "../components/general/Provider"
 import Modal from "../components/layout/Modal"
+import Navbar from "../components/layout/Navbar"
+import Provider from "../components/general/Provider"
 
 function MyApp({ Component, pageProps }) {
 	// -------------------------------------------------

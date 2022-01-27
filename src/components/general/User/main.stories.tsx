@@ -1,6 +1,8 @@
 // Component
 import Component from "."
 import { Story } from "../../../utils/types"
+
+// Utils
 import img from "../../../../public/user.png"
 
 // -------------------------------------------------
