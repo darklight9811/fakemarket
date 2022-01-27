@@ -27,7 +27,7 @@ export default function Home() {
 	// -------------------------------------------------
 
 	// hooks
-	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
+	const [list, fetch, loading, error] = useAsset("list", "fetch", "loading", "error")
 
 	// states
 	const [data, setdata] = useState(list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)))
@@ -69,12 +69,23 @@ export default function Home() {
 					itemMargin={"15px 10px"}
 					horizontal="space-around"
 				>
-					<List
-						data={data.map(asset => ({ id: asset.id, asset }))}
-						component={useCard ? Card : Row}
-						loading={loading}
-						perRow={4}
-					/>
+					{
+						error &&
+
+						<Box fill horizontal="center" mt="10vh">
+							<Typography fs={36}>An error has occurred, please try again later</Typography>
+						</Box>
+					}
+					{
+						!error &&
+
+						<List
+							data={data.map(asset => ({ id: asset.id, asset }))}
+							component={useCard ? Card : Row}
+							loading={loading}
+							perRow={4}
+						/>
+					}
 				</Box>
 			</Box>
 
