@@ -1,5 +1,7 @@
 # FakeMarket technical test
 
+![little presentation of the test](public/presentation.gif)
+
 Welcome to the technical test, you can checkout the requirements [here](https://www.figma.com/file/ox2tPvQ0owSI8dazlutaJk/test?node-id=0%3A1), this test was made by [Rafael Correa](https://github.com/darklight9811). You can checkout the test online with [vercel](https://fakemarket.vercel.app/) or download the project.
 
 ## Starting project
