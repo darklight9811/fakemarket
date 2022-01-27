@@ -4,7 +4,7 @@ import { createStore } from "../../../utils/store"
 
 type State = typeof initialData
 
-const useConfigSlice = createStore((set: any) => ({
+const useConfigSlice = createStore("config")((set: any) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------

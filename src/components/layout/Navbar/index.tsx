@@ -28,11 +28,11 @@ const Navbar = (props: NavbarProps) => {
 
 	// hooks
 	const [user] = useAuth("data")
-	const [paginate] = useAsset("paginate")
+	const [paginate, list] = useAsset("paginate", "list")
 	const [mode, setMode] = useConfig("mode", "setMode")
 
 	// states
-	const [filter, setfilter] = useState<string>()
+	const [filter, setfilter] = useState<string>(list.filter)
 	const [isToggled, setToggled] = useState(false)
 
 	// -------------------------------------------------
@@ -67,7 +67,7 @@ const Navbar = (props: NavbarProps) => {
 					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
 						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
 
-						<Input placeholder="Search artwork" icon="search" debounce={1} onChange={e => setfilter(e)} />
+						<Input value={list.filter} placeholder="Search artwork" icon="search" debounce={1} onChange={e => setfilter(e)} />
 
 						<User user={user} showName />
 					</Box>

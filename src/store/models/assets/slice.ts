@@ -11,7 +11,7 @@ import { sanitize } from "./utils"
 
 type State = typeof assetInitialData
 
-const useAssetSlice = createStore((set: any, get: any) => ({
+const useAssetSlice = createStore("asset")((set: any, get: any) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------

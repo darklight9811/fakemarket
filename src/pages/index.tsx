@@ -40,6 +40,8 @@ export default function Home() {
 
 	useEffect(() => { fetch() }, [fetch])
 
+	useEffect(() => setdata(list.data), [list])
+
 	// -------------------------------------------------
 	// Render
 	// -------------------------------------------------

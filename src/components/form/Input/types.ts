@@ -6,4 +6,5 @@ export type InputProps = {
 	placeholder?: string;
 	onChange?: (value: string) => void;
 	debounce?: number;
+	value?: string;
 }
