@@ -8,6 +8,10 @@ export const Container = styled.button<{ color?: "primary" | "danger" | "success
 	background-color: ${({ color }) => color ? mapColor(color):"transparent"};
 
 	color: ${({ color }) => mapColor(color ? "light" : "contrast")};
+	
+	svg path {
+		fill: ${({ color }) => mapColor(color ? "light" : "contrast")};
+	}
 
 	border: 1px solid ${({ color, theme }) => color ? "transparent":mapColor("contrast", theme)};
 	border-radius: ${({ color }) => color ? "10px":"16px"};

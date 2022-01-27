@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
 	p: {
 		margin: 8px 0
 	}
+
+	svg path {
+		fill: ${mapColor("contrast")};
+	}
 `;
 
 export default GlobalStyle

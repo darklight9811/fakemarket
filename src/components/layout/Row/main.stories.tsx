@@ -1,5 +1,5 @@
 // Component
-import CardComponent from "."
+import Component from "."
 import { Story } from "../../../utils/types"
 
 // -------------------------------------------------
@@ -7,8 +7,8 @@ import { Story } from "../../../utils/types"
 // -------------------------------------------------
 
 export default Story({
-	title: "Card",
-	component: CardComponent,
+	title: "Row",
+	component: Component,
 	argTypes: {
 		loading: {
 			description: "Show the component's skeleton type",
@@ -19,7 +19,7 @@ export default Story({
 			}
 		},
 		asset: {
-			description: "The NFT asset to be displayed in the card",
+			description: "The NFT asset to be displayed in the row",
 			control: false,
 		}
 	}
@@ -41,4 +41,4 @@ const assetRef = {
 // Stories
 // -------------------------------------------------
 
-export const Card = (props) => <CardComponent asset={assetRef as any} {...props} />
+export const Row = (props) => <Component asset={assetRef as any} {...props} />

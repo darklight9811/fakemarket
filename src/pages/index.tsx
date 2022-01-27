@@ -13,6 +13,7 @@ import Typography from '../components/general/Typography'
 
 // Containers
 import Buy from '../containers/Buy'
+import Filter from '../containers/Filter'
 
 // Store
 import useAsset from '../store/models/assets'
@@ -25,11 +26,13 @@ export default function Home() {
 	// Properties
 	// -------------------------------------------------
 
-	// states
-	const [useCard, setUseCard] = useState(true)
-
 	// hooks
 	const [list, fetch, loading] = useAsset("list", "fetch", "loading")
+
+	// states
+	const [data, setdata] = useState(list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)))
+	const [useCard, setUseCard] = useState(true)
+
 
 	// -------------------------------------------------
 	// Effects
@@ -52,6 +55,10 @@ export default function Home() {
 					<Button onClick={() => setUseCard(s => !s)}><Icon name="boxes" /></Button>
 				</Box>
 
+				<Box mb="24px">
+					<Filter onChange={filter => setdata(data => filter.sort([...data]))} />
+				</Box>
+
 				<Box
 					p="24px"
 					mb="48px"
@@ -61,7 +68,7 @@ export default function Home() {
 					horizontal="space-around"
 				>
 					<List
-						data={list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)).map(asset => ({ id: asset.id, asset }))}
+						data={data.map(asset => ({ id: asset.id, asset }))}
 						component={useCard ? Card : Row}
 						loading={loading}
 						perRow={4}
