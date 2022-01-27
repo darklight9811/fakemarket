@@ -37,7 +37,7 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 	background-repeat: no-repeat;
 	${({ skeleton }) => skeleton && css`animation: ${backgroundOffset} 1.5s linear infinite;`}
 	background-image: ${({ skeleton, src, theme }) => skeleton ?
-		`linear-gradient(to right, transparent, ${mapColor("background", theme)}, transparent)`:
+		`linear-gradient(to right, transparent, ${mapColor("backgroundAlt", theme)}, transparent)`:
 		`url(${src})`};
 
 	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};

@@ -15,7 +15,7 @@ export const Font = styled.span<TypographyProps>`
 
 export const Loading = styled.span<{ loading?: boolean }>`
 	background-size: 1100% 100%;
-	background-image: linear-gradient(to right, transparent, ${mapColor("background")}, transparent);
+	background-image: linear-gradient(to right, transparent, ${mapColor("backgroundAlt")}, transparent);
 	animation: ${backgroundOffset} 1.5s linear infinite;
 
 	padding: ${({ loading }) => loading ? "156px 110px" : 0};
