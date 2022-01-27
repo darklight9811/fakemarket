@@ -8,11 +8,10 @@ import { backgroundOffset, fadeIn } from "../../../styles/animations"
 import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
-	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
+	background-color: ${mapColor("background")};
 	animation: ${fadeIn} .5s;
 	
-	width: 258px;
-	height: 448px;
+	width: 100%;
 
 	padding: 20px;
 
@@ -42,8 +41,8 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 
 	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
 
-	width: ${({ skeleton }) => skeleton ? 0 : 220}px;
-	height: ${({ skeleton }) => skeleton ? 0 : 312}px;
+	width: ${({ skeleton }) => skeleton ? 0 : 45}px;
+	height: ${({ skeleton }) => skeleton ? 0 : 45}px;
 `
 
 export const Price = styled.div`

@@ -4,7 +4,7 @@ import { createStore } from "../../../utils/store"
 
 type State = typeof initialData
 
-const useModalSlice = createStore((set: any) => ({
+const useModalSlice = createStore("modal")((set: any) => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------

@@ -11,6 +11,7 @@ type BoxProps = Partial<{
 	vertical: "top" | "center" | "bottom";
 	horizontal: "left" | "center" | "right" | "space-around" | "space-between" | "space-evenly";
 	itemMargin: number | string;
+	fill: boolean;
 }> & marginProp & paddingProp
 
 export const Box = styled.div<BoxProps>`
@@ -18,6 +19,8 @@ export const Box = styled.div<BoxProps>`
 	flex-direction: ${({ direction }) => direction || "row"};
 	flex-wrap: wrap;
 	height: 100%;
+	
+	${({ fill }) => fill && css`width: 100%;`}
 
 	${({ itemMargin }) => itemMargin ? css`
 		& > * {

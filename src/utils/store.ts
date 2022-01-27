@@ -18,8 +18,8 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 	return store(cb, shallow)
 }
 
-export const createStore = pipe(
-	(...args: [any]) => persist(...args, { name: "fakestore", partialize: (state) => omit(state, "open") }),
+export const createStore = (storeName: string) => pipe(
+	(...args: [any]) => persist(...args, { name: `fakestore.${storeName}`, partialize: (state) => omit(state, "open") }),
 	create,
 ) as typeof create
 
@@ -27,4 +27,5 @@ export const paginationChanged = (curr, prev) =>
 	curr.list.limit !== prev.list.limit ||
 	curr.list.order !== prev.list.order ||
 	curr.list.page !== prev.list.page ||
-	curr.list.sort !== prev.list.sort
+	curr.list.sort !== prev.list.sort ||
+	curr.list.filter !== prev.list.filter

@@ -2,7 +2,7 @@
 import initialData from "./data"
 import { createStore } from "../../../utils/store"
 
-const useAuthSlice = createStore(() => ({
+const useAuthSlice = createStore("auth")(() => ({
 	// -------------------------------------------------
 	// State
 	// -------------------------------------------------

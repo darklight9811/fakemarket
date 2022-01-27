@@ -25,7 +25,7 @@ export const positional = <Props>(abb: string, position: string) => (props: Prop
 			[`${abb}r`]: `${position}-right`,
 			[`${abb}x`]: `${position}-left: ${entry[1]}; ${position}-right`,
 			[`${abb}y`]: `${position}-top: ${entry[1]}; ${position}-bottom`,
-		}[entry[0]]}: ${entry[1]}`)
+		}[entry[0]]}: ${entry[1]};`)
 
 export const margin = positional<marginProp>("m", "margin")
 

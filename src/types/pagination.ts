@@ -4,6 +4,7 @@ type PaginationType<Asset extends Record<string, any> = Record<string, any>> = {
 	sort?: keyof Asset;
 	limit: number;
 	page: number;
+	filter?: string;
 }
 
 export default PaginationType
