@@ -23,9 +23,9 @@ You can check out general documentation and design documentation inside [github 
 ## Storybook
 
 <div align="center">
-	<img src="public/storybook-01.png" width="33%" />
-	<img src="public/storybook-02.png" width="33%" />
-	<img src="public/storybook-03.png" width="33%" />
+	<img src="public/storybook-01.png" width="25%" />
+	<img src="public/storybook-02.png" width="25%" />
+	<img src="public/storybook-03.png" width="25%" />
 </div>
 
 This application comes with a simple storybook to help you use most of our components. Sadly is not online, so you will have to download the repo and run it locally to use it.
