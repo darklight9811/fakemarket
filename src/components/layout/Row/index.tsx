@@ -37,15 +37,21 @@ const Row = (props: CardProps) => {
 
 	return (
 		<styled.Container onClick={onSelect}>
-			<Box direction="row" vertical="center" horizontal="space-between" fill>
+			<Box direction="row" vertical="center" horizontal="space-between" fill style={{ flexWrap: "nowrap" }}>
 				<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
 
-				<p>
-					<Typography loading={props.loading} bold>{props.asset?.name}</Typography>
-				</p>
-				<p>
-					<Typography loading={props.loading}><Typography bold>Rarity:</Typography> Common</Typography>
-				</p>
+				{
+					!props.loading &&
+
+					<>
+						<p>
+							<Typography loading={props.loading} bold>{props.asset?.name}</Typography>
+						</p>
+						<p>
+							<Typography loading={props.loading}><Typography bold>Rarity:</Typography> Common</Typography>
+						</p>
+					</>
+				}
 
 				<Typography loading={props.loading}>Fixed price</Typography>
 

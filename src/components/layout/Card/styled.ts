@@ -10,7 +10,7 @@ import { mapColor } from "../../../utils/theme"
 export const Container = styled.div`
 	animation: ${fadeIn} .5s;
 	transition: transform .3s ease, box-shadow .4s ease;
-	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
+	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "backgroundAlt")};
 	
 	width: 258px;
 	height: 448px;
@@ -21,7 +21,7 @@ export const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 
-	border-radius: 0 0 8px 8px;
+	border-radius: 8px;
 	
 	& > div:nth-child(2) {
 		width: 100%;
@@ -40,7 +40,7 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 	background-repeat: no-repeat;
 	${({ skeleton }) => skeleton && css`animation: ${backgroundOffset} 1.5s linear infinite;`}
 	background-image: ${({ skeleton, src, theme }) => skeleton ?
-		`linear-gradient(to right, transparent, ${mapColor("backgroundAlt", theme)}, transparent)`:
+		`linear-gradient(to right, transparent, ${mapColor("background", theme)}, transparent)`:
 		`url(${src})`};
 
 	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
