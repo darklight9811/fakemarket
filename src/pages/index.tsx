@@ -1,25 +1,25 @@
 // Packages
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import Head from "next/head"
+import { useEffect, useState } from "react"
 
 // Components
-import Card from '../components/layout/Card'
-import List from '../components/layout/List'
-import Modal from '../components/layout/Modal'
-import Row from '../components/layout/Row'
-import Button from '../components/general/Button'
-import Icon from '../components/general/Icon'
-import Typography from '../components/general/Typography'
+import Card from "../components/layout/Card"
+import List from "../components/layout/List"
+import Modal from "../components/layout/Modal"
+import Row from "../components/layout/Row"
+import Button from "../components/general/Button"
+import Icon from "../components/general/Icon"
+import Typography from "../components/general/Typography"
 
 // Containers
-import Buy from '../containers/Buy'
-import Filter from '../containers/Filter'
+import Buy from "../containers/Buy"
+import Filter from "../containers/Filter"
 
 // Store
-import useAsset from '../store/models/assets'
+import useAsset from "../store/models/assets"
 
 // Styles
-import { Box } from '../styles/layout'
+import { Box } from "../styles/layout"
 
 export default function Home() {
 	// -------------------------------------------------
@@ -49,7 +49,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>FakeStore</title>
+				<title>FakeMarket</title>
 			</Head>
 			<Box container>
 				<Box fill mb="24px" vertical="center" horizontal="space-between">

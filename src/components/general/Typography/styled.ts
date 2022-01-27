@@ -1,17 +1,27 @@
 // Packages
-import styled from "styled-components";
+import styled from "styled-components"
 
-// Theme
-import { backgroundOffset } from "../../../styles/animations";
+// Style
+import { backgroundOffset } from "../../../styles/animations"
 
 // Utils
-import { mapColor } from "../../../utils/theme";
-import { TypographyProps } from "./types";
+import { mapColor } from "../../../utils/theme"
+
+// Types
+import { TypographyProps } from "./types"
+
+// -------------------------------------------------
+// Font
+// -------------------------------------------------
 
 export const Font = styled.span<TypographyProps>`
 	${({ bold }) => bold ? `font-weight: ${typeof bold === "boolean" ? "bold" : bold};` : ""}
 	${({ fs: size }) => size && `font-size: ${typeof size === "number" ? `${size}px`:size};`}
 `
+
+// -------------------------------------------------
+// Loading
+// -------------------------------------------------
 
 export const Loading = styled.span<{ loading?: boolean }>`
 	background-size: 1100% 100%;

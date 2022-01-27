@@ -1,5 +1,7 @@
 // Packages
 import Image from "next/image"
+
+// Components
 import Typography from "../Typography"
 
 // Component

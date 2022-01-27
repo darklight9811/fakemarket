@@ -1,4 +1,7 @@
+// Packages
 import { createGlobalStyle } from "styled-components"
+
+// Utils
 import { mapColor } from "../utils/theme"
 
 const GlobalStyle = createGlobalStyle`
@@ -6,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Oswald', sans-serif;
 	}
 
-	body, #root {
+	body {
 		margin: 0;
 		background-color: ${mapColor("background")};
 		color: ${mapColor("contrast")};
@@ -21,6 +24,6 @@ const GlobalStyle = createGlobalStyle`
 	svg path {
 		fill: ${mapColor("contrast")};
 	}
-`;
+`
 
 export default GlobalStyle

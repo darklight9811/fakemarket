@@ -4,6 +4,10 @@ import styled from "styled-components"
 // Utils
 import { mapColor } from "../../../utils/theme"
 
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
+
 export const Container = styled.nav`
 	height: 70px;
 	position: relative;
@@ -15,6 +19,10 @@ export const Container = styled.nav`
 	background-color: ${({ theme }) => theme.mode === "dark" ? "#212121" : theme.colors.background};
 `
 
+// -------------------------------------------------
+// Link
+// -------------------------------------------------
+
 export const Link = styled.a`
 	color: ${({ theme }) => mapColor(theme.mode === "light" ? "primary" : "contrast")};
 	text-decoration: none;
@@ -25,6 +33,10 @@ export const Link = styled.a`
 		width: 14px;
 	}
 `
+
+// -------------------------------------------------
+// Navlink
+// -------------------------------------------------
 
 export const Navlink = styled.a`
 	color: ${mapColor("contrast")};

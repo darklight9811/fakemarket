@@ -1,5 +1,5 @@
 // Types
-import { UserType } from "../../../store/models/auth/types";
+import { UserType } from "../../../store/models/auth/types"
 
 export type UserProps = {
 	user: UserType;

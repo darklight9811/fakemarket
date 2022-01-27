@@ -43,7 +43,7 @@ const useAssetSlice = createStore("asset")((set: any, get: any) => ({
 				list: {
 					...state.list,
 					data: sanitize(data.data),
-				}
+				},
 			}))
 		}
 	},
@@ -51,11 +51,11 @@ const useAssetSlice = createStore("asset")((set: any, get: any) => ({
 		set((state: State) => ({
 			list: {
 				...state.list,
-				...props
-			}
+				...props,
+			},
 		}))
-	}
-}));
+	},
+}))
 
 // -------------------------------------------------
 // Listeners

@@ -3,12 +3,14 @@ import * as styled from "./styled"
 import { CardProps } from "./types"
 
 // Styles
-import { Box, Division } from "../../../styles/layout"
+import { Box } from "../../../styles/layout"
 
 // Components
+import { useModal } from "../Modal"
 import Button from "../../general/Button"
 import Typography from "../../general/Typography"
-import { useModal } from "../Modal"
+
+// Store
 import useAsset from "../../../store/models/assets"
 
 const Row = (props: CardProps) => {

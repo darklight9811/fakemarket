@@ -1,4 +1,9 @@
-import styled from "styled-components";
+// Packages
+import styled from "styled-components"
+
+// -------------------------------------------------
+// Container
+// -------------------------------------------------
 
 export const Container = styled.div`
 	display: flex;

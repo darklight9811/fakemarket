@@ -4,6 +4,8 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 // Components
+import Input from "../../form/Input"
+import User from "../../general/User"
 import Toggle from "../../form/Toggle"
 
 // Component
@@ -12,14 +14,12 @@ import { NavbarProps } from "./types"
 import navbarItems from "../../../resources/navbar"
 
 // Store
+import useAuth from "../../../store/models/auth"
+import useAsset from "../../../store/models/assets"
 import useConfig from "../../../store/models/config"
 
 // Styles
 import { Box } from "../../../styles/layout"
-import Input from "../../form/Input"
-import User from "../../general/User"
-import useAuth from "../../../store/models/auth"
-import useAsset from "../../../store/models/assets"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -44,7 +44,7 @@ const Navbar = (props: NavbarProps) => {
 	}, [filter, paginate])
 
 	useEffect(() => {
-		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia("(prefers-color-scheme: dark)").matches)
 		else setToggled(mode === "dark")
 	}, [mode])
 

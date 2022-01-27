@@ -23,9 +23,9 @@ export const add = <
 	InitialObject extends Record<string, any> = any
 >(obj: AddObject | (() => AddObject)) => (initialObj: InitialObject) => ({
 	...initialObj,
-	...(typeof obj === "function" ? obj() : obj)
+	...(typeof obj === "function" ? obj() : obj),
 })
 
 export const rename = (map: Record<string, string>) =>
 	(obj: Record<string, any>) =>
-	Object.fromEntries(Object.entries(obj).map(entry => [map[entry[0]] || entry[0], entry[1]]))
+		Object.fromEntries(Object.entries(obj).map(entry => [map[entry[0]] || entry[0], entry[1]]))
