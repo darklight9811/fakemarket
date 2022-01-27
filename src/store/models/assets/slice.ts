@@ -34,8 +34,8 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 	fetch: async () => {
 		set(() => ({ loading: true }))
 
-		const { limit, page, order, sort } = (get() as State).list
-		const { data } = await request("api/assets", { params: { limit, page, order, sort } })
+		const { limit, page, order, sort, filter } = (get() as State).list
+		const { data } = await request("api/assets", { params: { limit, page, order, sort, ...(filter ? {match: filter}:{}) } })
 
 		set((state: State) => ({
 			loading: false,
@@ -45,7 +45,7 @@ const useAssetSlice = createStore((set: any, get: any) => ({
 			}
 		}))
 	},
-	paginate: (props: Omit<PaginationType, "data">) => {
+	paginate: (props: Partial<Omit<PaginationType, "data">>) => {
 		set((state: State) => ({
 			list: {
 				...state.list,

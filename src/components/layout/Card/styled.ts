@@ -8,7 +8,7 @@ import { backgroundOffset, fadeIn } from "../../../styles/animations"
 import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
-	background-color: ${mapColor("background")};
+	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
 	animation: ${fadeIn} .5s;
 	
 	width: 258px;

@@ -27,4 +27,5 @@ export const paginationChanged = (curr, prev) =>
 	curr.list.limit !== prev.list.limit ||
 	curr.list.order !== prev.list.order ||
 	curr.list.page !== prev.list.page ||
-	curr.list.sort !== prev.list.sort
+	curr.list.sort !== prev.list.sort ||
+	curr.list.filter !== prev.list.filter

@@ -19,6 +19,7 @@ import { Box } from "../../../styles/layout"
 import Input from "../../form/Input"
 import User from "../../general/User"
 import useAuth from "../../../store/models/auth"
+import useAsset from "../../../store/models/assets"
 
 const Navbar = (props: NavbarProps) => {
 	// -------------------------------------------------
@@ -27,14 +28,20 @@ const Navbar = (props: NavbarProps) => {
 
 	// hooks
 	const [user] = useAuth("data")
+	const [paginate] = useAsset("paginate")
 	const [mode, setMode] = useConfig("mode", "setMode")
 
 	// states
+	const [filter, setfilter] = useState<string>()
 	const [isToggled, setToggled] = useState(false)
 
 	// -------------------------------------------------
 	// Memos
 	// -------------------------------------------------
+
+	useEffect(() => {
+		paginate({ filter })
+	}, [filter, paginate])
 
 	useEffect(() => {
 		if (mode === "default" && typeof window !== "undefined") setToggled(window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -60,7 +67,7 @@ const Navbar = (props: NavbarProps) => {
 					<Box vertical="center" horizontal="space-around" itemMargin={"0 10px"}>
 						<Toggle name="navbar" value={isToggled} onChange={value => setMode(value ? "dark" : "light")} />
 
-						<Input placeholder="Search artwork" icon="search" />
+						<Input placeholder="Search artwork" icon="search" debounce={1} onChange={e => setfilter(e)} />
 
 						<User user={user} showName />
 					</Box>
