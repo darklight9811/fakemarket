@@ -54,6 +54,6 @@ export type RawAssetType = {
 	minted_at_time: string;
 }
 
-type AssetType = Pick<RawAssetType, "asset_id" | "data" | "name"> & { id: string, price: string }
+type AssetType = Pick<RawAssetType, "asset_id" | "data" | "name" | "schema"> & { id: string, price: string }
 
 export default AssetType
