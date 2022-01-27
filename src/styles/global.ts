@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Oswald', sans-serif;
 	}
 
-	body, #root {
+	body {
 		margin: 0;
 		background-color: ${mapColor("background")};
 		color: ${mapColor("contrast")};
