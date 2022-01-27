@@ -22,8 +22,8 @@ export const Background = styled.div`
 // -------------------------------------------------
 
 export const Modal = styled.div`
-	border-bottom: 5px solid ${mapColor("primary")};
 	background-color: ${mapColor("background")};
+	border-bottom: 5px solid ${mapColor("primary")};
 
 	position: absolute;
 	display: inline-block;

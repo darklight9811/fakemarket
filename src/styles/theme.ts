@@ -3,7 +3,7 @@ const defaultTheme = {
 
 	colors: {
 		// main colors
-		primary: "#6110C9",
+		primary: "#4f1994",
 		danger: "#FF6969",
 		success: "#0F7D48",
 

@@ -10,6 +10,7 @@ import { mapColor } from "../../../utils/theme"
 export const Container = styled.div`
 	animation: ${fadeIn} .5s;
 	background-color: ${mapColor("backgroundAlt")};
+	border-bottom: 5px solid ${mapColor("primary")};
 	transition: transform .3s ease, box-shadow .4s ease;
 	
 	width: 258px;
