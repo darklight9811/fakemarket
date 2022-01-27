@@ -3,7 +3,7 @@ import * as styled from "./styled"
 import { CardProps } from "./types"
 
 // Styles
-import { Division } from "../../../styles/layout"
+import { Box, Division } from "../../../styles/layout"
 
 // Components
 import Button from "../../general/Button"
@@ -40,7 +40,7 @@ const Card = (props: CardProps) => {
 			{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img}`} />}
 			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
 
-			<div>
+			<div style={{ width: "100%" }}>
 				<p>
 					<Typography loading={props.loading} bold>{props.asset?.name}</Typography>
 				</p>
