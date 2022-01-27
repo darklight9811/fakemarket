@@ -49,7 +49,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>FakeStore</title>
+				<title>FakeMarket</title>
 			</Head>
 			<Box container>
 				<Box fill mb="24px" vertical="center" horizontal="space-between">
