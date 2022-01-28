@@ -36,7 +36,7 @@ const Buy = () => {
 	return (
 		<Box vertical="center" horizontal="center" direction="column">
 			<h2>Confirm purchase?</h2>
-			<img src={`/api/img/${asset?.data?.img}`} height={252} alt={asset?.name} />
+			<img src={`/api/img/${asset?.data?.img || asset?.data?.backimg}`} height={252} alt={asset?.name} />
 
 			<Box m="44px" itemMargin="0 22px">
 				<Button width="107px" onClick={close} color="danger">Cancel</Button>
