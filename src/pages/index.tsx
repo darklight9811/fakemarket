@@ -1,5 +1,6 @@
 // Packages
 import Head from "next/head"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
 // Components
@@ -27,12 +28,21 @@ export default function Home() {
 	// -------------------------------------------------
 
 	// hooks
+	const router = useRouter()
 	const [list, fetch, loading, error] = useAsset("list", "fetch", "loading", "error")
 
 	// states
 	const [data, setdata] = useState(list.data.sort((a, b) => parseFloat(a.price) - parseFloat(b.price)))
 	const [useCard, setUseCard] = useState(true)
 
+	// -------------------------------------------------
+	// Callbacks
+	// -------------------------------------------------
+
+	const errorReload = () => {
+		localStorage.clear()
+		router.reload()
+	}
 
 	// -------------------------------------------------
 	// Effects
@@ -72,8 +82,10 @@ export default function Home() {
 					{
 						error &&
 
-						<Box fill horizontal="center" mt="10vh">
+						<Box fill horizontal="center" vertical="center" mt="10vh" direction="column" itemMargin="14px 0">
 							<Typography fs={36}>An error has occurred, please try again later</Typography>
+
+							<Button onClick={errorReload}>Click here to reload page</Button>
 						</Box>
 					}
 					{
