@@ -40,8 +40,8 @@ const Row = (props: CardProps) => {
 	return (
 		<styled.Container onClick={onSelect}>
 			<Box direction="row" vertical="center" horizontal="space-between" fill style={{ flexWrap: "nowrap" }}>
-				{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img}`} />}
-				<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
+				{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />}
+				<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />
 
 				{
 					!props.loading &&

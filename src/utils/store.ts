@@ -19,7 +19,7 @@ export const useExtractFromStore = (store, keyOrKeys?: string[] | string) => {
 }
 
 export const createStore = (storeName: string) => pipe(
-	(...args: [any]) => persist(...args, { name: `fakestore.${storeName}`, partialize: (state) => omit(state, "open") }),
+	(...args: [any]) => persist(...args, { name: `fakestore.${storeName}`, partialize: (state) => omit(state, ["open", "error"]) }),
 	create,
 ) as typeof create
 

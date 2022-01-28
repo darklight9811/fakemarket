@@ -3,7 +3,7 @@ import * as styled from "./styled"
 import { CardProps } from "./types"
 
 // Styles
-import { Box, Division } from "../../../styles/layout"
+import { Division } from "../../../styles/layout"
 
 // Components
 import Button from "../../general/Button"
@@ -39,8 +39,8 @@ const Card = (props: CardProps) => {
 
 	return (
 		<styled.Container onClick={onSelect}>
-			{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img}`} />}
-			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
+			{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />}
+			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />
 
 			<div style={{ width: "100%" }}>
 				<p>
