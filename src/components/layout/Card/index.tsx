@@ -39,7 +39,7 @@ const Card = (props: CardProps) => {
 
 	return (
 		<styled.Container onClick={onSelect}>
-			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img}`} />
+			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />
 
 			<div>
 				<p>
