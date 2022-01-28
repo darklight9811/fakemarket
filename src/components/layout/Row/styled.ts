@@ -78,8 +78,8 @@ export const Backdrop = styled.img`
 	opacity: 0.05;
 
 	position: absolute;
-	top: -5%;
+	top: -50%;
 	left: 5%;
 
-	width: 100px;
+	width: 25%;
 `

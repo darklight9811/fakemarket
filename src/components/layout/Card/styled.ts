@@ -82,4 +82,6 @@ export const Backdrop = styled.img`
 	position: absolute;
 	top: -25%;
 	left: -25%;
+
+	width: 200%;
 `
