@@ -72,12 +72,13 @@ export default function Home() {
 				</Box>
 
 				<Box
-					p="24px"
+					p="24px 0"
 					mb="48px"
+					mx="-10px"
 					round="10px"
-					background='backgroundAlt'
 					itemMargin={"15px 10px"}
 					horizontal="space-around"
+					style={{ width: "calc(100% + 20px)" }}
 				>
 					{
 						error &&

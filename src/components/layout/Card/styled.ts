@@ -13,19 +13,23 @@ import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
 	animation: ${fadeIn} .5s;
+	background-color: ${mapColor("backgroundAlt")};
+	border-bottom: 5px solid ${mapColor("primary")};
 	transition: transform .3s ease, box-shadow .4s ease;
-	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#E9F0F3" : "background")};
 	
 	width: 258px;
 	height: 448px;
 
 	padding: 20px;
 
+	z-index: 0;
 	display: flex;
-	flex-direction: column;
+	overflow: hidden;
+	position: relative;
 	align-items: center;
+	flex-direction: column;
 
-	border-radius: 0 0 8px 8px;
+	border-radius: 8px;
 	
 	& > div:nth-child(2) {
 		width: 100%;
@@ -48,7 +52,7 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 	background-repeat: no-repeat;
 	${({ skeleton }) => skeleton && css`animation: ${backgroundOffset} 1.5s linear infinite;`}
 	background-image: ${({ skeleton, src, theme }) => skeleton ?
-		`linear-gradient(to right, transparent, ${mapColor("backgroundAlt", theme)}, transparent)`:
+		`linear-gradient(to right, transparent, ${mapColor("background", theme)}, transparent)`:
 		`url(${src})`};
 
 	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
@@ -62,9 +66,22 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 // -------------------------------------------------
 
 export const Price = styled.div`
+	width: 100%;
+
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 
 	margin-top: 15px;
+`
+
+export const Backdrop = styled.img`
+	z-index: -1;
+	opacity: 0.05;
+
+	position: absolute;
+	top: -25%;
+	left: -25%;
+
+	width: 200%;
 `

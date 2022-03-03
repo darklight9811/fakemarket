@@ -22,8 +22,8 @@ export const Background = styled.div`
 // -------------------------------------------------
 
 export const Modal = styled.div`
-	border: 5px solid ${mapColor("light")};
-	background-color: ${({ theme }) => mapColor(theme.mode === "light" ? "#DBF0EF":"backgroundAlt", theme)};
+	background-color: ${mapColor("background")};
+	border-bottom: 5px solid ${mapColor("primary")};
 
 	position: absolute;
 	display: inline-block;

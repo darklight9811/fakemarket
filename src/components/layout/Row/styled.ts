@@ -13,18 +13,22 @@ import { mapColor } from "../../../utils/theme"
 
 export const Container = styled.div`
 	animation: ${fadeIn} .5s;
-	background-color: ${mapColor("background")};
+	background-color: ${mapColor("backgroundAlt")};
+	border-bottom: 5px solid ${mapColor("primary")};
 	transition: transform .3s ease, box-shadow .4s ease;
 	
 	width: 100%;
 
 	padding: 20px;
 
+	z-index: 0;
 	display: flex;
-	flex-direction: column;
+	overflow: hidden;
+	position: relative;
 	align-items: center;
+	flex-direction: column;
 
-	border-radius: 0 0 8px 8px;
+	border-radius: 8px;
 	
 	& > div:nth-child(2) {
 		width: 100%;
@@ -50,7 +54,8 @@ export const Image = styled.div<{skeleton?: boolean, src: string}>`
 		`linear-gradient(to right, transparent, ${mapColor("background", theme)}, transparent)`:
 		`url(${src})`};
 
-	padding: ${({ skeleton }) => skeleton ? "156px 110px" : 0};
+	margin-right: 15px;
+	padding: ${({ skeleton }) => skeleton ? "23px 23px" : 0};
 
 	width: ${({ skeleton }) => skeleton ? 0 : 45}px;
 	height: ${({ skeleton }) => skeleton ? 0 : 45}px;
@@ -66,4 +71,15 @@ export const Price = styled.div`
 	justify-content: space-around;
 
 	margin-top: 15px;
+`
+
+export const Backdrop = styled.img`
+	z-index: -1;
+	opacity: 0.05;
+
+	position: absolute;
+	top: -50%;
+	left: 5%;
+
+	width: 25%;
 `

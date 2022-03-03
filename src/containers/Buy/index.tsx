@@ -40,7 +40,7 @@ const Buy = () => {
 
 			<Box m="44px" itemMargin="0 22px">
 				<Button width="107px" onClick={close} color="danger">Cancel</Button>
-				<Button width="107px" onClick={buy} color="success">Buy</Button>
+				<Button width="107px" onClick={buy} color="primary">Buy</Button>
 			</Box>
 		</Box>
 	)

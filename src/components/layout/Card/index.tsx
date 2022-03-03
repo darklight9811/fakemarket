@@ -39,9 +39,10 @@ const Card = (props: CardProps) => {
 
 	return (
 		<styled.Container onClick={onSelect}>
+			{!props.loading && <styled.Backdrop src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />}
 			<styled.Image skeleton={props.loading} src={`api/img/${props.asset?.data?.img || props.asset?.data?.backimg}`} />
 
-			<div>
+			<div style={{ width: "100%" }}>
 				<p>
 					<Typography loading={props.loading} bold>{props.asset?.name}</Typography>
 				</p>
